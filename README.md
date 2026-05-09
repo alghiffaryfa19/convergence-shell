@@ -6,7 +6,7 @@ This is an early work in progress project and I opened it up to the public for o
 
 ## Demo
 
-https://github.com/user-attachments/assets/49cd43a8-0c55-4f91-8f17-7d509e89ac2b
+<video src="https://github.com/user-attachments/assets/49cd43a8-0c55-4f91-8f17-7d509e89ac2b" controls></video>
 
 ## Why
 
