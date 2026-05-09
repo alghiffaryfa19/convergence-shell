@@ -1,8 +1,8 @@
 # Compiled schema
 schemas/gschemas.compiled
 
-# Personal dev/deploy scripts
-scripts/
+# Personal dev/deploy scripts (root only, not src/device_specific/scripts/)
+/scripts/
 
 # Editor and IDE files
 *.swp
