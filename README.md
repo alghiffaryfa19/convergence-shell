@@ -2,6 +2,8 @@
 
 A modular GNOME Shell extension that adapts the desktop experience to the device it is running on — phone, tablet, laptop, or desktop. One installation, one set of preferences, behaviour that follows the hardware.
 
+This is an early work in progress project and I opened it up to the public for others to contribute to the vision and to help resolve some of the remaining bugs to enable a full Linux Covergence experience.
+
 ## Demo
 
 <video src="https://github.com/Daniel-Blandford/convergence-shell/releases/download/v0.1.0/LinuxMobileDemo.mp4" controls width="100%">
@@ -48,12 +50,12 @@ These modules detect missing hardware at runtime and stay disabled if unsupporte
 - **Auto-rotate** with optional suppression when the device is lying flat
 - **Auto-brightness** (requires an ambient light sensor)
 - **Call proximity** (screen off during calls)
-- **Alert slider** support for phones with a physical 3-position switch
+- **Alert slider** support for phones with a physical 3-position switch - OnePlus 6 specific
 
 ## Requirements
 
 - GNOME Shell **48, 49, or 50**
-- Optional: a patched Mutter (see `patches/`) to fix Chromium-based browsers rendering at minimum size on phone displays with fractional scaling
+'Gnome-Shell-Mobile 48' was tested on a Fairphone 5 (running PostMarketOS edge), but please note that Gnome-Shell-Mobile 48 has several limitations that create bugs, you're best to use this on vanilla Gnome 50 to minimise bugs which I tested on a OnePlus 6 (running PostMarketOS edge).
 
 ## Installation
 
@@ -69,20 +71,6 @@ glib-compile-schemas schemas/
 # Log out and back in (Wayland) or press Alt+F2, "r", Enter (X11)
 gnome-extensions enable convergence@daniel-blandford.github.io
 ```
-
-Open the preferences with:
-
-```bash
-gnome-extensions prefs convergence@daniel-blandford.github.io
-```
-
-## Optional Mutter patch
-
-Chromium-based browsers send `xdg_toplevel.set_min_size(500, 115)`. On phone displays where fractional scaling produces a logical width below 500 px, Mutter's maximisation constraint refuses to fill the work area and the browser ends up rendering only its toolbar.
-
-The patch in `patches/mutter-ignore-min-size-for-maximized-wayland.patch` makes Mutter ignore the client's `min_size` for maximised and size-limited Wayland windows, matching the existing fullscreen bypass. Apply against your local Mutter checkout if you hit this.
-
-The patch is provided for reference; line numbers and index hashes are placeholders that need to be regenerated against your tree.
 
 ## Architecture
 
