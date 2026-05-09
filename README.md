@@ -6,10 +6,7 @@ This is an early work in progress project and I opened it up to the public for o
 
 ## Demo
 
-<video src="https://github.com/Daniel-Blandford/convergence-shell/releases/download/v0.1.0/LinuxMobileDemo.mp4" controls width="100%">
-  Your browser doesn't support inline video.
-  <a href="https://github.com/Daniel-Blandford/convergence-shell/releases/download/v0.1.0/LinuxMobileDemo.mp4">Download the demo video</a>.
-</video>
+https://github.com/user-attachments/assets/49cd43a8-0c55-4f91-8f17-7d509e89ac2b
 
 ## Why
 
