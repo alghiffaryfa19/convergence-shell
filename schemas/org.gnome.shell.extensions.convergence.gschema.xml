@@ -1,0 +1,637 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist gettext-domain="convergence@daniel-blandford.github.io">
+  <schema id="org.gnome.shell.extensions.convergence"
+          path="/org/gnome/shell/extensions/convergence/">
+
+    <!-- ============================================================
+         Status Bar (Phone)
+         ============================================================ -->
+
+    <key name="panel-height" type="i">
+      <default>0</default>
+      <summary>Status bar height</summary>
+      <description>Custom height in pixels for the phone status bar. Use this to accommodate a notch or camera punch hole. 0 means use the GNOME default height.</description>
+    </key>
+
+    <key name="panel-padding-left" type="i">
+      <default>0</default>
+      <summary>Status bar left padding</summary>
+      <description>Left padding in pixels for the status bar, to accommodate display border radius or camera punch holes.</description>
+    </key>
+
+    <key name="panel-padding-right" type="i">
+      <default>0</default>
+      <summary>Status bar right padding</summary>
+      <description>Right padding in pixels for the status bar, to accommodate display border radius or camera punch holes.</description>
+    </key>
+
+    <key name="statusbar-max-notification-icons" type="i">
+      <default>3</default>
+      <summary>Max notification icons</summary>
+      <description>Maximum number of notification icons visible in the status bar. Additional notifications are indicated by a dot.</description>
+    </key>
+
+    <key name="phone-panel-corner-offset" type="i">
+      <default>0</default>
+      <summary>Status bar corner vertical offset</summary>
+      <description>Vertical offset in pixels for the panel corners on phone displays. Increase to push the corners further down below the status bar.</description>
+    </key>
+
+    <!-- ============================================================
+         Gesture Bar (Phone)
+         ============================================================ -->
+
+    <key name="gesture-bar-height" type="i">
+      <default>20</default>
+      <summary>Gesture bar height</summary>
+      <description>Height in pixels for the bottom gesture bar on phone displays. Ignored on non-phone displays.</description>
+    </key>
+
+    <key name="edge-back-gesture-enabled" type="b">
+      <default>false</default>
+      <summary>Edge swipe back gesture</summary>
+      <description>Enable left and right edge swipe gestures for back navigation on phone displays.</description>
+    </key>
+
+    <!-- ============================================================
+         Haptics &amp; Feedback
+         ============================================================ -->
+
+    <key name="vibration-intensity" type="i">
+      <default>50</default>
+      <summary>Vibration intensity</summary>
+      <description>Vibration motor intensity from 0 (off) to 100 (max). Controls the strength of all haptic feedback.</description>
+    </key>
+
+    <key name="vibration-on-keypress" type="b">
+      <default>false</default>
+      <summary>Vibrate on keypress</summary>
+      <description>Trigger a short haptic buzz when a key is pressed on the on-screen keyboard.</description>
+    </key>
+
+    <key name="vibration-on-slider-change" type="b">
+      <default>true</default>
+      <summary>Vibrate on alert slider change</summary>
+      <description>Trigger a short haptic buzz when the hardware alert slider (tri-state toggle) is moved.</description>
+    </key>
+
+    <key name="auto-rotate-tilt-lock" type="b">
+      <default>true</default>
+      <summary>Suppress rotation when lying down</summary>
+      <description>When enabled, auto-rotate is suppressed if the phone is nearly flat (face-up or face-down), preventing unwanted rotation when the user is lying on their side.</description>
+    </key>
+
+    <key name="home-feedback-sounds" type="b">
+      <default>false</default>
+      <summary>Home feedback sounds</summary>
+      <description>Play subtle feedback sounds for home interactions such as drag start, page snap, drop, and remove.</description>
+    </key>
+
+    <!-- ============================================================
+         Volume OSD (Phone)
+         ============================================================ -->
+
+    <key name="volume-osd-side" type="s">
+      <default>'left'</default>
+      <summary>Volume OSD side</summary>
+      <description>Which screen edge the volume OSD appears on in phone mode. One of: 'left', 'right'.</description>
+    </key>
+
+    <!-- ============================================================
+         USB Mode (Device-Specific)
+         ============================================================ -->
+
+    <key name="usb-mode" type="s">
+      <default>'default'</default>
+      <summary>USB-C port mode</summary>
+      <description>Controls the USB-C port role. 'default' leaves the kernel in control, 'host' forces host mode for peripherals, 'device' forces device/gadget mode for charging and tethering.</description>
+    </key>
+
+    <!-- ============================================================
+         App Layouts
+         ============================================================ -->
+
+    <key name="dock-pinned-apps" type="as">
+      <default>[]</default>
+      <summary>Phone dock pinned apps</summary>
+      <description>App desktop IDs pinned to the phone dock, independent of the desktop taskbar's favourite-apps. An empty array means not yet initialised (will be populated from favourite-apps on first run).</description>
+    </key>
+
+    <key name="app-grid-layout" type="s">
+      <default>''</default>
+      <summary>App grid layout</summary>
+      <description>JSON array encoding the custom app grid order. Each element is either an app ID string or a folder object {"name":"...","apps":["..."]}. Empty string means alphabetical order.</description>
+    </key>
+
+    <key name="home-screen-layout" type="s">
+      <default>''</default>
+      <summary>Home screen layout</summary>
+      <description>JSON: {"cols":4,"items":[{"id":"app.desktop","col":0,"row":0}, ...]}</description>
+    </key>
+
+    <!-- ============================================================
+         Window Appearance (Desktop)
+         ============================================================ -->
+
+    <key name="rounded-corners-enabled" type="b">
+      <default>false</default>
+      <summary>Enable rounded window corners</summary>
+      <description>Whether to apply rounded corners to windows.</description>
+    </key>
+
+    <key name="window-corner-radius" type="i">
+      <default>18</default>
+      <summary>Window corner radius</summary>
+      <description>Corner radius in pixels for maximized windows. 0 disables.</description>
+    </key>
+
+    <key name="window-corner-smoothing" type="d">
+      <default>0.0</default>
+      <summary>Window corner smoothing</summary>
+      <description>Squircle smoothing factor (0 = circular, higher = smoother iOS-style curves). Range 0.0-1.0.</description>
+    </key>
+
+    <!-- ============================================================
+         Taskbar (Desktop)
+         ============================================================ -->
+
+    <key name="taskbar-secondary-mode" type="s">
+      <default>'visible'</default>
+      <summary>Taskbar visibility mode</summary>
+      <description>How the taskbar behaves on large displays. 'visible' keeps it always visible; 'hidden' auto-hides it and shows on hover.</description>
+    </key>
+
+    <key name="taskbar-autohide-hover" type="b">
+      <default>true</default>
+      <summary>Show taskbar on hover</summary>
+      <description>When taskbar visibility is set to auto-hide, show the taskbar when hovering the bottom edge of the screen.</description>
+    </key>
+
+    <key name="taskbar-monitor-mode" type="s">
+      <default>'single'</default>
+      <summary>Taskbar monitor mode</summary>
+      <description>On multi-monitor setups, choose whether the taskbar is available on all displays ('all') or constrained to one display ('single').</description>
+    </key>
+
+    <key name="taskbar-single-monitor-target" type="s">
+      <default>'primary'</default>
+      <summary>Single taskbar monitor target</summary>
+      <description>When taskbar monitor mode is 'single', select which display hosts the taskbar: 'primary' or 'focused'.</description>
+    </key>
+
+    <key name="taskbar-hide-when-overlapped" type="b">
+      <default>false</default>
+      <summary>Hide taskbar when windows overlap it</summary>
+      <description>Automatically hide the taskbar when a normal window occupies the taskbar area.</description>
+    </key>
+
+    <key name="taskbar-maximized-avoid-taskbar" type="b">
+      <default>false</default>
+      <summary>Keep maximized windows clear of taskbar</summary>
+      <description>Hide the taskbar whenever a maximized normal window is present.</description>
+    </key>
+
+    <key name="taskbar-panel-mode" type="b">
+      <default>true</default>
+      <summary>Taskbar panel mode</summary>
+      <description>When enabled, the taskbar spans the monitor edge like a panel.</description>
+    </key>
+
+    <key name="taskbar-thickness" type="i">
+      <default>64</default>
+      <summary>Taskbar thickness</summary>
+      <description>Taskbar thickness in logical pixels. 0 = auto. Applied as width when taskbar position is left/right, height when bottom.</description>
+    </key>
+
+    <key name="taskbar-show-left-box" type="b">
+      <default>false</default>
+      <summary>Show left panel box</summary>
+      <description>Show the GNOME panel left box in the taskbar.</description>
+    </key>
+
+    <key name="taskbar-show-center-box" type="b">
+      <default>false</default>
+      <summary>Show center panel box</summary>
+      <description>Show the GNOME panel center box (clock/calendar) in the taskbar.</description>
+    </key>
+
+    <key name="taskbar-show-right-box" type="b">
+      <default>false</default>
+      <summary>Show right panel box</summary>
+      <description>Show the GNOME panel right box (quick settings/indicators) in the taskbar.</description>
+    </key>
+
+    <key name="taskbar-icon-size" type="i">
+      <default>38</default>
+      <summary>Taskbar icon size</summary>
+      <description>App icon size in pixels for the taskbar. 0 = auto (derived from adaptive scaling).</description>
+    </key>
+
+    <key name="taskbar-show-window-previews" type="b">
+      <default>true</default>
+      <summary>Show window previews on hover</summary>
+      <description>Show window preview thumbnails when hovering over taskbar icons.</description>
+    </key>
+
+    <key name="taskbar-app-grid-icon" type="s">
+      <default>''</default>
+      <summary>Taskbar app grid button icon</summary>
+      <description>Custom icon for the app grid button in the taskbar. Accepts an icon name or absolute file path. Empty string uses the default.</description>
+    </key>
+
+    <key name="taskbar-panel-background-opacity" type="i">
+      <default>20</default>
+      <summary>Taskbar panel background opacity</summary>
+      <description>Opacity of the taskbar panel background when panel mode is enabled (10-100).</description>
+    </key>
+
+    <key name="taskbar-animate-opening-apps" type="b">
+      <default>true</default>
+      <summary>Animate opening applications</summary>
+      <description>Animate taskbar and grid icons when launching applications.</description>
+    </key>
+
+    <key name="taskbar-show-open-indicators" type="b">
+      <default>true</default>
+      <summary>Show open-app indicators</summary>
+      <description>Show running/focused indicators on taskbar app icons.</description>
+    </key>
+
+    <key name="taskbar-highlight-fill-enabled" type="b">
+      <default>true</default>
+      <summary>Show taskbar highlight fill</summary>
+      <description>Show background fill for running/focused taskbar app highlights.</description>
+    </key>
+
+    <key name="taskbar-highlight-edge-enabled" type="b">
+      <default>false</default>
+      <summary>Show taskbar highlight bottom edge</summary>
+      <description>Show bottom edge for running/focused taskbar app highlights.</description>
+    </key>
+
+    <key name="taskbar-highlight-strip-enabled" type="b">
+      <default>false</default>
+      <summary>Show taskbar running-state strip</summary>
+      <description>Show additional running-state strip layer for taskbar app highlights.</description>
+    </key>
+
+    <key name="taskbar-minimize-animation-style" type="s">
+      <default>'scale'</default>
+      <summary>Minimize animation style</summary>
+      <description>Animation style for minimizing windows. One of: 'scale', 'genie'.</description>
+    </key>
+
+    <key name="taskbar-minimize-into-app-icon" type="b">
+      <default>true</default>
+      <summary>Minimize into app icon</summary>
+      <description>Animate minimized windows toward their taskbar app icon.</description>
+    </key>
+
+    <!-- ============================================================
+         Hover Animations (Desktop Taskbar)
+         ============================================================ -->
+
+    <key name="taskbar-animate-hover" type="b">
+      <default>true</default>
+      <summary>Animate hovering app icons</summary>
+      <description>Animate taskbar icons on mouse hover.</description>
+    </key>
+
+    <key name="taskbar-hover-animation-type" type="s">
+      <default>'SIMPLE'</default>
+      <summary>Hover animation type</summary>
+      <description>Type of hover animation: SIMPLE, RIPPLE, or PLANK.</description>
+    </key>
+
+    <key name="taskbar-hover-animation-duration" type="i">
+      <default>160</default>
+      <summary>Hover animation duration</summary>
+      <description>Duration of the hover animation in milliseconds (0-300).</description>
+    </key>
+
+    <key name="taskbar-hover-animation-rotation" type="i">
+      <default>0</default>
+      <summary>Hover animation rotation</summary>
+      <description>Rotation in degrees applied during hover animation (-30 to 30).</description>
+    </key>
+
+    <key name="taskbar-hover-animation-travel" type="d">
+      <default>0.0</default>
+      <summary>Hover animation travel</summary>
+      <description>Translation as a fraction of icon size (-1.0 to 1.0).</description>
+    </key>
+
+    <key name="taskbar-hover-animation-zoom" type="d">
+      <default>1.3</default>
+      <summary>Hover animation zoom</summary>
+      <description>Scale factor for the hover animation (0.5 to 2.5).</description>
+    </key>
+
+    <key name="taskbar-hover-animation-convexity" type="d">
+      <default>0.0</default>
+      <summary>Hover animation convexity</summary>
+      <description>Convexity of the hover animation curve (0.0 to 3.0).</description>
+    </key>
+
+    <key name="taskbar-hover-animation-extent" type="i">
+      <default>1</default>
+      <summary>Hover animation extent</summary>
+      <description>Number of neighbouring icons affected by RIPPLE/PLANK animation (1-10).</description>
+    </key>
+
+    <key name="taskbar-hover-highlight-enabled" type="b">
+      <default>true</default>
+      <summary>Highlight hovering app icons</summary>
+      <description>Show a coloured background behind taskbar icons on hover.</description>
+    </key>
+
+    <key name="taskbar-hover-highlight-color" type="s">
+      <default>'rgba(238, 238, 236, 0.1)'</default>
+      <summary>Hover highlight colour</summary>
+      <description>Background colour applied to taskbar icons on hover.</description>
+    </key>
+
+    <key name="taskbar-hover-highlight-pressed-color" type="s">
+      <default>'rgba(238, 238, 236, 0.18)'</default>
+      <summary>Pressed highlight colour</summary>
+      <description>Background colour applied to taskbar icons when pressed.</description>
+    </key>
+
+    <key name="taskbar-hover-highlight-border-radius" type="i">
+      <default>8</default>
+      <summary>Hover highlight border radius</summary>
+      <description>Border radius in pixels for the hover highlight (0-24).</description>
+    </key>
+
+    <key name="taskbar-hover-highlight-running-color" type="s">
+      <default>'rgba(238, 238, 236, 0.15)'</default>
+      <summary>Running app highlight colour</summary>
+      <description>Background colour for taskbar icons of running applications.</description>
+    </key>
+
+    <key name="taskbar-hover-highlight-focused-color" type="s">
+      <default>'rgba(238, 238, 236, 0.25)'</default>
+      <summary>Focused app highlight colour</summary>
+      <description>Background colour for the taskbar icon of the focused application.</description>
+    </key>
+
+    <!-- ============================================================
+         Workspaces
+         ============================================================ -->
+
+    <key name="independent-workspaces" type="b">
+      <default>false</default>
+      <summary>Independent workspaces per monitor</summary>
+      <description>Each monitor has its own workspace stack. Switching workspaces on one monitor does not affect the others.</description>
+    </key>
+
+    <key name="independent-workspaces-vanilla-primary" type="b">
+      <default>true</default>
+      <summary>Vanilla primary workspace behaviour</summary>
+      <description>When enabled with independent workspaces, the primary display follows GNOME's native global workspace behaviour.</description>
+    </key>
+
+    <key name="workspace-shortcut-target-monitor" type="s">
+      <default>'pointer'</default>
+      <summary>Workspace shortcut target monitor</summary>
+      <description>When independent workspaces are enabled, keyboard shortcuts target either the monitor under the pointer or the focused monitor.</description>
+    </key>
+
+    <key name="show-home-in-overview" type="b">
+      <default>false</default>
+      <summary>Show home screen in overview</summary>
+      <description>Keep the home screen layer visible behind workspaces while GNOME overview is open.</description>
+    </key>
+
+    <!-- ============================================================
+         Notification Panel (Phone)
+         ============================================================ -->
+
+    <key name="qs-toggle-order" type="as">
+      <default>[]</default>
+      <summary>Quick settings toggle order</summary>
+      <description>Ordered list of quick settings toggle IDs. Empty means default order. New toggles are appended.</description>
+    </key>
+
+    <key name="qs-hidden-toggles" type="as">
+      <default>[]</default>
+      <summary>Hidden quick settings toggles</summary>
+      <description>List of quick settings toggle IDs that should be hidden from the notification panel.</description>
+    </key>
+
+    <key name="notification-panel-scale-phone" type="i">
+      <default>100</default>
+      <range min="50" max="200"/>
+      <summary>Phone notification panel scale</summary>
+      <description>Scale multiplier percentage for the notification panel in phone mode. 100 = default size, 50 = half size, 150 = one and a half times.</description>
+    </key>
+
+    <key name="notification-panel-scale-desktop" type="i">
+      <default>90</default>
+      <range min="50" max="200"/>
+      <summary>Desktop notification panel scale</summary>
+      <description>Scale multiplier percentage for the notification panel in desktop mode. 100 = default size, 50 = half size, 150 = one and a half times.</description>
+    </key>
+
+    <!-- ============================================================
+         Notifications
+         ============================================================ -->
+
+    <key name="notification-banner-position" type="i">
+      <default>0</default>
+      <summary>Notification banner position</summary>
+      <description>Position for notification banners. 0=default, 1=top left, 2=top centre, 3=top right, 4=bottom left, 5=bottom centre, 6=bottom right.</description>
+    </key>
+
+    <key name="taskbar-notification-badges" type="b">
+      <default>true</default>
+      <summary>Show notification badges on taskbar icons</summary>
+      <description>Display notification count badges on taskbar icons when unread notifications are present.</description>
+    </key>
+
+    <key name="tray-notification-enabled" type="b">
+      <default>true</default>
+      <summary>Show tray area in notification panel</summary>
+      <description>Display a persistent notification in the notification panel showing system tray icons with interactive menus.</description>
+    </key>
+
+    <key name="desktop-notification-panel-enabled" type="b">
+      <default>true</default>
+      <summary>Use Convergence notification panel on desktop</summary>
+      <description>Replace GNOME's Quick Settings panel with the Convergence notification panel when in desktop mode.</description>
+    </key>
+
+    <key name="desktop-tray-location" type="s">
+      <default>'top-panel'</default>
+      <summary>Desktop tray area location</summary>
+      <description>Where to show the system tray area on desktop. 'top-panel' shows icons in the GNOME top panel, 'notification-panel' shows them inside the Convergence notification panel, 'both' shows in both locations, 'none' hides the tray area entirely.</description>
+    </key>
+
+    <key name="desktop-tray-enabled" type="b">
+      <default>true</default>
+      <summary>Show tray icons in desktop top panel</summary>
+      <description>Display system tray icons in the desktop top panel with interactive context menus.</description>
+    </key>
+
+    <key name="desktop-max-notification-icons" type="i">
+      <default>5</default>
+      <summary>Max notification icons in desktop top panel</summary>
+      <description>Maximum number of notification icons visible in the desktop top panel. Additional notifications are indicated by a dot.</description>
+    </key>
+
+    <!-- ============================================================
+         Dynamic Transparency &amp; Intellihide (Desktop)
+         ============================================================ -->
+
+    <key name="taskbar-dynamic-opacity" type="b">
+      <default>false</default>
+      <summary>Dynamic transparency</summary>
+      <description>Make taskbar transparent when no maximised windows are present, opaque when one is.</description>
+    </key>
+
+    <key name="taskbar-dynamic-opacity-min" type="i">
+      <default>35</default>
+      <range min="10" max="100"/>
+      <summary>Dynamic transparency minimum opacity</summary>
+      <description>Minimum opacity percentage when no maximised windows are present (10-100).</description>
+    </key>
+
+    <key name="taskbar-intellihide" type="b">
+      <default>false</default>
+      <summary>Intellihide</summary>
+      <description>Auto-hide taskbar when windows overlap; reveal on pointer-at-edge.</description>
+    </key>
+
+    <!-- ============================================================
+         Widgets (Home Screen)
+         ============================================================ -->
+
+    <key name="widget-weather-location" type="s">
+      <default>''</default>
+      <summary>Weather widget location</summary>
+      <description>City name for the weather widget. Leave empty to default to London, United Kingdom.</description>
+    </key>
+
+    <key name="widget-clock-format" type="s">
+      <default>'24h'</default>
+      <summary>Clock widget time format</summary>
+      <description>Time format for the clock widget. One of: 24h, 12h.</description>
+    </key>
+
+    <key name="widget-clock-show-seconds" type="b">
+      <default>true</default>
+      <summary>Clock widget show seconds</summary>
+      <description>Whether to display seconds in the clock widget.</description>
+    </key>
+
+    <key name="widget-trash-icon-empty" type="s">
+      <default>''</default>
+      <summary>Recycle Bin empty icon</summary>
+      <description>Custom icon name for the empty recycle bin. Leave empty for the default.</description>
+    </key>
+
+    <key name="widget-trash-icon-full" type="s">
+      <default>''</default>
+      <summary>Recycle Bin full icon</summary>
+      <description>Custom icon name for the non-empty recycle bin. Leave empty for the default.</description>
+    </key>
+
+    <key name="widget-hwmon-show-cores" type="b">
+      <default>true</default>
+      <summary>System Monitor show cores</summary>
+      <description>Whether to show per-core CPU usage bars in the System Monitor widget.</description>
+    </key>
+
+    <!-- ============================================================
+         Keyboard Shortcuts
+         ============================================================ -->
+
+    <key name="activate-taskbar-1" type="as">
+      <default><![CDATA[['<Super>1']]]></default>
+      <summary>Activate taskbar app 1</summary>
+    </key>
+    <key name="activate-taskbar-2" type="as">
+      <default><![CDATA[['<Super>2']]]></default>
+      <summary>Activate taskbar app 2</summary>
+    </key>
+    <key name="activate-taskbar-3" type="as">
+      <default><![CDATA[['<Super>3']]]></default>
+      <summary>Activate taskbar app 3</summary>
+    </key>
+    <key name="activate-taskbar-4" type="as">
+      <default><![CDATA[['<Super>4']]]></default>
+      <summary>Activate taskbar app 4</summary>
+    </key>
+    <key name="activate-taskbar-5" type="as">
+      <default><![CDATA[['<Super>5']]]></default>
+      <summary>Activate taskbar app 5</summary>
+    </key>
+    <key name="activate-taskbar-6" type="as">
+      <default><![CDATA[['<Super>6']]]></default>
+      <summary>Activate taskbar app 6</summary>
+    </key>
+    <key name="activate-taskbar-7" type="as">
+      <default><![CDATA[['<Super>7']]]></default>
+      <summary>Activate taskbar app 7</summary>
+    </key>
+    <key name="activate-taskbar-8" type="as">
+      <default><![CDATA[['<Super>8']]]></default>
+      <summary>Activate taskbar app 8</summary>
+    </key>
+    <key name="activate-taskbar-9" type="as">
+      <default><![CDATA[['<Super>9']]]></default>
+      <summary>Activate taskbar app 9</summary>
+    </key>
+
+    <!-- ============================================================
+         Debugging
+         ============================================================ -->
+
+    <key name="show-display-debug-label" type="b">
+      <default>false</default>
+      <summary>Show display debug label</summary>
+      <description>Show a label in the status bar displaying the detected host device type and primary display mode.</description>
+    </key>
+
+    <key name="debug-log-level" type="s">
+      <default>'warn'</default>
+      <summary>Debug log verbosity</summary>
+      <description>Controls extension log verbosity. One of: error, warn, info, debug.</description>
+    </key>
+
+    <key name="debug-mock-notifications" type="b">
+      <default>false</default>
+      <summary>Show mock notifications</summary>
+      <description>Inject sample notifications into the notification panel for testing.</description>
+    </key>
+
+    <key name="demo-mode" type="b">
+      <default>false</default>
+      <summary>Demo mode</summary>
+      <description>Hide private details such as real location. Weather widget shows London instead.</description>
+    </key>
+
+    <key name="debug-show-app-memory" type="b">
+      <default>false</default>
+      <summary>Show app memory usage in recent apps</summary>
+      <description>Display the RAM usage of each app next to its name in the recent apps screen.</description>
+    </key>
+
+    <key name="debug-phone-simulation" type="b">
+      <default>false</default>
+      <summary>Phone simulation on touchscreen laptops</summary>
+      <description>When enabled, a touchscreen laptop in portrait orientation uses phone mode regardless of display scaling. The device switches to desktop mode in landscape.</description>
+    </key>
+
+    <!-- ============================================================
+         Internal
+         ============================================================ -->
+
+    <key name="prefs-open-page" type="s">
+      <default>''</default>
+      <summary>Requested preferences page</summary>
+      <description>Internal key used to request opening a specific preferences tab.</description>
+    </key>
+
+  </schema>
+</schemalist>

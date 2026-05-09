@@ -1,0 +1,70 @@
+From: Convergence <convergence@daniel-blandford.github.io>
+Subject: [PATCH] constraints: Ignore min_size for maximized Wayland windows
+
+Chromium-based browsers set xdg_toplevel.set_min_size(500, 115) in
+Wayland logical coordinates.  On phone displays where fractional
+scaling produces a logical width below 500 px (e.g. 1224 / 2.57 = 476),
+the maximization constraint bails out because the work area is smaller
+than the client's declared minimum.  Mutter then sends
+configure(500, 115) instead of the work area dimensions, so the browser
+only renders a 115 px tall toolbar with no content.
+
+The fullscreen constraint already skips the min_size check for Wayland
+clients (since the client will render at whatever size the compositor
+tells it).  Apply the same logic to maximization and size-limits:
+
+ - constrain_maximization: skip the hminbad/vminbad early-return for
+   Wayland clients so the window is maximized to the full work area
+   regardless of declared min_size.
+
+ - constrain_size_limits: skip min/max clamping for maximized Wayland
+   clients, matching the existing fullscreen Wayland bypass.
+
+Wayland clients treat set_min_size as a hint to the compositor, not a
+hard rendering limit.  Chromium will happily render at 476x991 if the
+compositor sends that configuration — it just asks for 500 as a
+preference.
+
+---
+ src/core/constraints.c | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
+
+diff --git a/src/core/constraints.c b/src/core/constraints.c
+index XXXXXXX..XXXXXXX 100644
+--- a/src/core/constraints.c
++++ b/src/core/constraints.c
+@@ -XXX,XX +XXX,XX @@ constrain_maximization (MetaWindow         *window,
+   get_size_limits (window, &min_size, &max_size);
+   hminbad = target_size.width < min_size.width && window->maximized_horizontally;
+   vminbad = target_size.height < min_size.height && window->maximized_vertically;
+-  if (hminbad || vminbad)
++  /* Wayland clients will render at whatever size the compositor sends;
++   * set_min_size is advisory.  Skip the bail-out so maximized windows
++   * fill the work area even when it is narrower than the declared
++   * minimum (e.g. Chromium on a phone with fractional scaling).
++   */
++  if ((hminbad || vminbad)
++#ifdef HAVE_WAYLAND
++      && window->client_type != META_WINDOW_CLIENT_TYPE_WAYLAND
++#endif
++      )
+     return TRUE;
+
+   /* Determine whether constraint is already satisfied; exit if it is */
+@@ -XXX,XX +XXX,XX @@ constrain_size_limits (MetaWindow         *window,
+   if (info->action_type == ACTION_MOVE)
+     return TRUE;
+
+ #ifdef HAVE_WAYLAND
+-  if (window->client_type == META_WINDOW_CLIENT_TYPE_WAYLAND &&
+-      meta_window_is_fullscreen (window))
++  /* Wayland clients render at whatever size the compositor configures;
++   * honour their min/max hints only when neither fullscreen nor
++   * maximized, so that the compositor can fill the screen even when
++   * the client's declared minimum exceeds the logical display size.
++   */
++  if (window->client_type == META_WINDOW_CLIENT_TYPE_WAYLAND &&
++      (meta_window_is_fullscreen (window) ||
++       meta_window_is_maximized (window)))
+     return TRUE;
+ #endif

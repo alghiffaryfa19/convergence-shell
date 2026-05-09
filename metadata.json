@@ -1,0 +1,9 @@
+{
+    "uuid": "convergence@daniel-blandford.github.io",
+    "name": "Convergence Desktop",
+    "description": "A modular GNOME Shell extension that adapts the desktop experience based on your device — phone, tablet, laptop, or desktop. Provides gesture navigation, an app drawer, notification panel, home screen, and more.",
+    "shell-version": ["48", "49", "50"],
+    "session-modes": ["user", "unlock-dialog"],
+    "version": 1,
+    "settings-schema": "org.gnome.shell.extensions.convergence"
+}

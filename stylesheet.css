@@ -1,0 +1,2728 @@
+/* SPDX-License-Identifier: GPL-3.0-or-later */
+/* Copyright 2026 Daniel Blandford */
+
+/* ===================================================================
+ *  Convergence — Dark Material-like theme
+ * =================================================================== */
+
+
+/* ===== Gesture Bar ===== */
+
+.convergence-bottom-bar {
+    background-color: transparent;
+}
+
+.convergence-pill {
+    background-color: rgba(255, 255, 255, 1.0);
+    border-radius: 3px;
+    height: 5px;
+}
+
+.convergence-swipe-hint {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+
+/* ===== Status Bar ===== */
+
+.convergence-transparent-panel {
+    background-color: transparent;
+}
+
+.convergence-phone-statusbar {
+    background-color: rgba(0, 0, 0, 0.92);
+}
+
+.convergence-transparent-panel .panel-corner {
+    -panel-corner-background-color: transparent;
+    -panel-corner-border-color: transparent;
+}
+
+/* Android-style notification icons in status bar */
+.convergence-phone-notif-icons {
+    spacing: 6px;
+}
+
+.convergence-phone-notif-icon {
+    icon-size: 14px;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.convergence-phone-notif-overflow {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 14px;
+    font-weight: 800;
+}
+
+/* Notification icons in desktop top panel */
+.convergence-desktop-notif-icons {
+    spacing: 8px;
+}
+
+.convergence-desktop-notif-icon {
+    icon-size: 16px;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.convergence-desktop-notif-overflow {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.convergence-phone-battery-box {
+    spacing: 4px;
+}
+
+.convergence-phone-network-box {
+    spacing: 0;
+}
+
+.convergence-phone-network-icon {
+    icon-size: 16px;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.convergence-phone-status-mirror-icon {
+    icon-size: 16px;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.convergence-phone-caffeine-icon {
+    icon-size: 16px;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.convergence-phone-power-mode-icon {
+    icon-size: 16px;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.convergence-phone-battery-icon {
+    icon-size: 16px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.convergence-phone-battery-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.88);
+}
+
+.convergence-display-label {
+    font-size: 10px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0 8px;
+}
+
+
+/* ===== Notification Banner ===== */
+
+.notification-banner {
+    margin-top: 8px;
+}
+
+/* ===== Notification Panel (was Quick Settings) ===== */
+
+.convergence-notif-backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.convergence-qs-backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.convergence-qs-panel {
+    background-color: rgba(24, 26, 32, 0.96);
+    border-radius: 0 0 24px 24px;
+}
+
+.convergence-qs-grid-container {
+    padding: 16px;
+}
+
+/* Strip GNOME's popup-menu styling from the reparented grid */
+.convergence-qs-panel .quick-settings {
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+}
+
+.convergence-qs-panel .quick-settings-grid {
+    padding: 0;
+}
+
+/* OneUI 5 style: circular icon buttons + labels */
+
+.convergence-qs-cell {
+    /* spacing/padding set inline for scaling */
+}
+
+/* Phone QS toggle — independent circular button (not a GNOME widget) */
+.convergence-qs-toggle {
+    /* border-radius and size set inline for scaling */
+    padding: 0;
+    margin: 0;
+    background-color: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.9);
+    border: none;
+    box-shadow: none;
+}
+
+.convergence-qs-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.14);
+}
+
+.convergence-qs-toggle:active {
+    background-color: rgba(255, 255, 255, 0.18);
+}
+
+.convergence-qs-toggle.checked {
+    background-color: rgba(138, 180, 248, 0.26);
+    color: rgb(138, 180, 248);
+}
+
+.convergence-qs-toggle.checked:hover {
+    background-color: rgba(138, 180, 248, 0.34);
+}
+
+.convergence-qs-toggle StIcon {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.convergence-qs-toggle.checked StIcon {
+    color: rgb(138, 180, 248);
+}
+
+/* Cell label beneath icon */
+.convergence-qs-cell-label {
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.78);
+    text-align: center;
+}
+
+/* Menu indicator arrow on menu toggles */
+.convergence-qs-menu-indicator {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0 0 0 2px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.convergence-qs-menu-indicator:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Inline expandable menu section (sits between toggle rows) */
+.convergence-qs-menu-section {
+    background-color: rgb(50, 52, 58);
+    border-radius: 16px;
+    padding: 8px 12px;
+    margin: 4px 0;
+}
+
+.convergence-qs-menu-title {
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: bold;
+    padding: 4px 8px 8px;
+}
+
+.convergence-qs-menu-item {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    border-radius: 12px;
+    padding: 10px 12px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.convergence-qs-menu-item:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.convergence-qs-menu-item:active {
+    background-color: rgba(255, 255, 255, 0.14);
+}
+
+.convergence-qs-menu-item.checked {
+    color: rgb(138, 180, 248);
+}
+
+.convergence-qs-menu-separator {
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 4px 8px;
+}
+
+/* Expand/collapse chevron */
+.convergence-qs-chevron {
+    padding: 8px 24px;
+    min-width: 48px;
+    min-height: 36px;
+    border-radius: 999px;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.convergence-qs-chevron:hover {
+    color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.06);
+}
+
+/* Brightness slider in expanded panel */
+.convergence-qs-volume,
+.convergence-qs-brightness,
+.convergence-qs-panel .convergence-qs-volume,
+.convergence-qs-panel .convergence-qs-brightness,
+.convergence-qs-panel .quick-slider.convergence-qs-volume,
+.convergence-qs-panel .quick-slider.convergence-qs-brightness {
+    background-color: transparent;
+    border-radius: 0;
+    padding: 8px 0;
+    margin: 4px 0 8px 0;
+    border: none;
+    box-shadow: none;
+}
+
+/* Sliders stay full-width with subtle restyle */
+.convergence-qs-panel .quick-slider {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    padding: 8px 12px;
+    margin: 4px 0;
+    border: none;
+    box-shadow: none;
+}
+
+.convergence-qs-panel .quick-slider StIcon {
+    color: rgba(255, 255, 255, 0.9);
+    icon-size: 20px;
+}
+
+.convergence-qs-brightness .icon-button {
+    min-height: 32px;
+    min-width: 32px;
+}
+
+.convergence-qs-auto-brightness.active {
+    background-color: rgba(130, 180, 255, 0.5);
+    border-radius: 99px;
+}
+
+.convergence-qs-auto-brightness.active:hover {
+    background-color: rgba(130, 180, 255, 0.65);
+}
+
+/* Notification list in phone QS panel */
+.convergence-qs-notif-container {
+    margin: 0 16px 8px 16px;
+}
+
+.convergence-qs-notif-header {
+    padding: 8px 4px 8px 4px;
+}
+
+.convergence-qs-notif-header-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.78);
+}
+
+.convergence-qs-notif-clear-btn,
+.convergence-qs-notif-clear-btn.button {
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(138, 180, 248, 1);
+    background-color: rgba(138, 180, 248, 0.12);
+    border: none;
+    box-shadow: none;
+    padding: 3px 14px;
+    border-radius: 999px;
+    min-height: 0;
+    min-width: 0;
+}
+
+.convergence-qs-notif-clear-btn:hover,
+.convergence-qs-notif-clear-btn:active {
+    background-color: rgba(138, 180, 248, 0.22);
+}
+
+.convergence-qs-notif-scroll {
+    min-height: 80px;
+    padding: 0;
+    margin: 0;
+}
+
+.convergence-qs-notif-scroll StScrollBar {
+    min-width: 0;
+    min-height: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.convergence-qs-notif-container .message-list {
+    padding: 0 !important;
+    margin: 0;
+}
+
+.convergence-qs-notif-container .message-view {
+    padding: 0;
+    margin: 0;
+}
+
+.convergence-qs-notif-container .message-list-section,
+.convergence-qs-notif-container .message-list-section-list,
+.convergence-qs-notif-container .notification-group,
+.convergence-qs-notif-container .message-notification-group,
+.convergence-qs-notif-container .message-group {
+    padding: 0;
+    margin: 0;
+    spacing: 0;
+}
+
+.convergence-qs-notif-container .message-list-section-title-bin {
+    padding: 0;
+    margin: 0;
+    min-height: 0;
+    max-height: 0;
+}
+
+.convergence-qs-notif-placeholder {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.4);
+    padding: 32px 0;
+}
+
+/* Notification messages: recolor to match QS panel, keep vanilla GNOME layout */
+.convergence-qs-notif-container .message {
+    background-color: rgb(39, 41, 48);
+    border: none;
+    box-shadow: none;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 6px;
+}
+
+.convergence-qs-notif-container .message:hover {
+    background-color: rgb(46, 48, 56);
+}
+
+.convergence-qs-notif-container .message:active {
+    background-color: rgb(52, 55, 63);
+}
+
+.convergence-qs-notif-container .message .message-title,
+.convergence-qs-notif-container .message .message-body {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.convergence-qs-notif-container .message .message-source-title,
+.convergence-qs-notif-container .message .event-time,
+.convergence-qs-notif-container .message .message-source-icon {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.convergence-qs-notif-container .message-close-button {
+    min-width: 0;
+    min-height: 0;
+    max-width: 0;
+    max-height: 0;
+    padding: 0;
+    margin: 0;
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+}
+
+.convergence-qs-notif-container .message-expand-button,
+.convergence-qs-notif-container .message-collapse-button {
+    color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.convergence-qs-notif-container .message-expand-button:hover,
+.convergence-qs-notif-container .message-collapse-button:hover {
+    background-color: rgba(255, 255, 255, 0.14);
+}
+
+.convergence-qs-notif-container .notification-button {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.convergence-qs-notif-container .notification-button:hover {
+    background-color: rgba(255, 255, 255, 0.14);
+}
+
+.convergence-qs-notif-container .message-media-control {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.convergence-qs-notif-container .message-media-control:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Stacked notification cards (grouped) */
+.convergence-qs-notif-container .message:second-in-stack {
+    background-color: rgb(34, 36, 42);
+}
+
+.convergence-qs-notif-container .message:lower-in-stack {
+    background-color: rgb(30, 32, 38);
+}
+
+/* Media message cover art */
+.convergence-qs-notif-container .media-message-cover-icon.fallback,
+.convergence-qs-notif-container .message-icon.message-themed-icon {
+    color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Ongoing/pinned notification indicator */
+.convergence-qs-notif-container .convergence-notif-ongoing {
+    border-left: 3px solid rgba(138, 180, 248, 0.6);
+}
+
+/* Undo toast */
+.convergence-qs-undo-toast {
+    background-color: rgb(50, 53, 62);
+    border-radius: 12px;
+}
+
+.convergence-qs-undo-btn {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.convergence-qs-undo-btn:hover {
+    background-color: rgba(138, 180, 248, 0.12);
+}
+
+/* Tray Area Notification */
+.convergence-tray-notification {
+    background-color: rgb(39, 41, 48);
+    border-radius: 16px;
+    border: none;
+    box-shadow: none;
+    padding: 12px 16px;
+    margin-bottom: 6px;
+}
+
+.convergence-tray-notification-title {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.convergence-tray-notification-icons {
+    spacing: 8px;
+    padding: 8px 0 4px 0;
+}
+
+.convergence-tray-icon-btn {
+    background-color: rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    padding: 8px;
+    border: none;
+}
+
+.convergence-tray-icon-btn:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+}
+
+.convergence-tray-icon-btn:active {
+    background-color: rgba(255, 255, 255, 0.18);
+}
+
+.convergence-tray-icon-btn StIcon {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* QS Edit Mode */
+.convergence-qs-edit-scroll {
+    padding: 0;
+    margin: 0;
+}
+
+.convergence-qs-edit-content {
+    padding: 8px 0 24px 0;
+    spacing: 8px;
+}
+
+.convergence-qs-edit-header {
+    padding: 4px 12px;
+    spacing: 8px;
+}
+
+.convergence-qs-edit-header-label {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.convergence-qs-edit-grid {
+    padding: 4px 0;
+}
+
+.convergence-qs-edit-cell {
+    padding: 8px 2px 4px 2px;
+    spacing: 6px;
+}
+
+.convergence-qs-edit-icon {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-radius: 28px;
+}
+
+.convergence-qs-edit-icon-inner {
+    color: rgba(255, 255, 255, 0.85);
+    margin: auto;
+}
+
+.convergence-qs-edit-cell-label {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 9px;
+    text-align: center;
+}
+
+/* Badge: positioned absolutely via x/y in JS */
+.convergence-qs-edit-badge-minus,
+.convergence-qs-edit-badge-plus {
+    border-radius: 10px;
+    padding: 0;
+}
+
+.convergence-qs-edit-badge-minus {
+    background-color: rgb(220, 60, 60);
+}
+
+.convergence-qs-edit-badge-minus:hover {
+    background-color: rgb(240, 80, 80);
+}
+
+.convergence-qs-edit-badge-plus {
+    background-color: rgb(60, 160, 60);
+}
+
+.convergence-qs-edit-badge-plus:hover {
+    background-color: rgb(80, 180, 80);
+}
+
+.convergence-qs-edit-badge-minus StIcon,
+.convergence-qs-edit-badge-plus StIcon {
+    color: white;
+    margin: auto;
+}
+
+.convergence-qs-edit-divider {
+    padding: 12px 12px 4px 12px;
+}
+
+.convergence-qs-edit-divider-label {
+    color: rgba(255, 255, 255, 0.45);
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.convergence-qs-edit-ghost {
+    opacity: 220;
+}
+
+/* Notification previews in context menus */
+.convergence-notif-preview-title {
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 11px;
+    margin: 2px 8px 6px 8px;
+}
+
+.convergence-notif-preview-item {
+    background-color: rgba(255, 255, 255, 0.06);
+    border-radius: 8px;
+    padding: 6px 8px;
+    margin: 2px 0;
+}
+
+.convergence-notif-preview-item-title {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 12px;
+}
+
+.convergence-notif-preview-item-body {
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 11px;
+    margin-top: 2px;
+}
+
+
+/* ===== App Drawer (Phone) ===== */
+
+.convergence-drawer {
+    background-color: transparent;
+    border-radius: 24px 24px 0 0;
+}
+
+/* Liquid Glass floating grid — translucent blur panel */
+.convergence-drawer-floating-grid {
+    background-color: transparent;
+    border-radius: 26px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: none;
+    padding: 0;
+}
+
+.convergence-drawer-floating-grid-blur {
+    margin: 8px;
+    border-radius: 18px;
+}
+
+.convergence-drawer-floating-grid-dim {
+    border-radius: 26px;
+    background-color: transparent;
+    box-shadow: inset 0 0 0 8px rgba(6, 6, 10, 0.88),
+                inset 0 0 10px 8px rgba(6, 6, 10, 0.48);
+}
+
+.convergence-drawer-floating-grid-glass {
+    border-radius: 26px;
+    background-color: transparent;
+}
+
+.convergence-drawer-floating-grid-tint {
+    border-radius: 26px;
+    background-color: transparent;
+}
+
+.convergence-drawer-floating-grid-specular {
+    border-radius: 26px;
+    background-color: transparent;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28),
+                inset 0 2px 1px rgba(255, 255, 255, 0.08);
+}
+
+/* Solid fallback when blur is disabled */
+.convergence-drawer-floating-grid-glass-solid {
+    background-color: rgba(18, 18, 22, 0.42);
+}
+
+.convergence-drawer-floating-grid-tint-solid {
+    background-color: rgba(255, 255, 255, 0.04);
+}
+
+/* Drop-shadow classes (togglable) */
+.convergence-drawer-floating-grid-shadow {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.22), 0 1px 4px rgba(0, 0, 0, 0.10);
+}
+
+.convergence-drawer-glass {
+    border-radius: 24px 24px 0 0;
+    background-color: rgba(18, 18, 20, 0.85);
+}
+
+.convergence-drawer-tint {
+    background-color: rgba(38, 38, 42, 0.35);
+    border-radius: 24px 24px 0 0;
+    border-top-width: 1px;
+    border-top-color: rgba(255, 255, 255, 0.28);
+    border-top-style: solid;
+}
+
+.convergence-drawer-handle {
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 2px;
+    width: 40px;
+    height: 4px;
+    margin: 8px 0;
+}
+
+.convergence-drawer-favorites {
+    padding: 16px 16px 8px 16px;
+}
+
+.convergence-dock-indicators {
+    spacing: 4px;
+    min-height: 8px;
+    margin-top: 3px;
+}
+
+.convergence-dock-instance-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 3px;
+    background-color: rgba(255, 255, 255, 0.62);
+}
+
+.convergence-dock-indicators-focused .convergence-dock-instance-dot {
+    width: 6px;
+    height: 6px;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Drawer search field */
+.convergence-drawer-search {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 8px 16px;
+    margin: 8px 16px;
+    color: white;
+    font-size: 14px;
+    caret-color: white;
+    selection-background-color: rgba(100, 180, 255, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.convergence-drawer-search:focus {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.convergence-search-focused {
+    box-shadow: 0 0 0 1px rgba(140, 190, 255, 0.35);
+}
+
+.convergence-drawer-search StLabel {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.convergence-drawer-search-shell {
+    spacing: 10px;
+}
+
+.convergence-drawer-search-icon {
+    icon-size: 16px;
+    color: rgba(255, 255, 255, 0.48);
+    margin-left: 16px;
+    margin-right: 4px;
+    y-align: center;
+}
+
+/* Detached search field — borderless, full-width */
+.convergence-drawer-search-shell-detached {
+    background-color: transparent;
+    border-radius: 0;
+    padding: 10px 18px 10px 12px;
+    margin: 0;
+    border: none;
+    box-shadow: none;
+}
+
+.convergence-drawer-search-entry-detached {
+    background-color: transparent;
+    border-width: 0;
+    box-shadow: none;
+    padding: 8px 12px 8px 6px;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.convergence-drawer-search-entry-detached:focus {
+    background-color: transparent;
+    border-width: 0;
+    box-shadow: none;
+}
+
+.convergence-drawer-search-shell-detached:focus-within {
+    background-color: transparent;
+    border-color: rgba(255, 255, 255, 0.20);
+    box-shadow: none;
+}
+
+.convergence-drawer-search-entry-detached StLabel {
+    color: rgba(255, 255, 255, 0.46);
+}
+
+/* ===== App Menu — Floating Grid Panel ===== */
+
+/* Backdrop: dark overlay behind the panel */
+.convergence-app-menu-backdrop {
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+/* Floating panel shell */
+.convergence-app-menu-panel {
+    background-color: transparent;
+    border-radius: 26px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: none;
+    padding: 0;
+}
+
+.convergence-app-menu-panel-blur {
+    margin: 8px;
+    border-radius: 18px;
+}
+
+.convergence-app-menu-panel-dim {
+    border-radius: 26px;
+    background-color: transparent;
+    box-shadow: inset 0 0 0 8px rgba(6, 6, 10, 0.88),
+                inset 0 0 10px 8px rgba(6, 6, 10, 0.48);
+}
+
+.convergence-app-menu-panel-glass {
+    border-radius: 26px;
+    background-color: transparent;
+}
+
+.convergence-app-menu-panel-tint {
+    border-radius: 26px;
+    background-color: transparent;
+}
+
+.convergence-app-menu-panel-specular {
+    border-radius: 26px;
+    background-color: transparent;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28),
+                inset 0 2px 1px rgba(255, 255, 255, 0.08);
+}
+
+.convergence-app-menu-panel-glass-solid {
+    background-color: rgba(18, 18, 22, 0.42);
+}
+
+.convergence-app-menu-panel-tint-solid {
+    background-color: rgba(255, 255, 255, 0.04);
+}
+
+.convergence-app-menu-panel-shadow {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.22), 0 1px 4px rgba(0, 0, 0, 0.10);
+}
+
+/* Search bar at top of panel */
+.convergence-app-menu-search {
+    background-color: transparent;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+    padding: 8px 12px 8px 6px;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 15px;
+    font-weight: 400;
+    caret-color: white;
+}
+
+.convergence-app-menu-search:focus {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.convergence-app-menu-search StLabel {
+    color: rgba(255, 255, 255, 0.46);
+}
+
+/* Search divider */
+.convergence-app-menu-search-divider {
+    background-color: rgba(255, 255, 255, 0.26);
+    height: 1px;
+    margin: 0 16px 8px 16px;
+}
+
+/* Category chips — horizontal scroll row */
+.convergence-app-menu-category-scroll {
+    margin: 0 14px 6px 14px;
+}
+
+.convergence-app-menu-category-scroll StScrollBar {
+    height: 0px;
+}
+
+.convergence-app-menu-category-bar {
+    spacing: 8px;
+    padding: 2px 2px 4px 2px;
+}
+
+/* Liquid Glass category chips — minimal glass at rest, bright glass when active */
+.convergence-app-menu-category-chip {
+    border-radius: 999px;
+    padding: 6px 14px;
+    color: rgba(255, 255, 255, 0.70);
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: none;
+    font-size: 12.5px;
+    font-weight: 500;
+}
+
+.convergence-app-menu-category-chip StLabel {
+    color: rgba(255, 255, 255, 0.70);
+}
+
+.convergence-app-menu-category-chip-active StLabel {
+    color: rgba(255, 255, 255, 0.96);
+}
+
+.convergence-app-menu-category-chip:hover {
+    background-color: rgba(255, 255, 255, 0.10);
+    border-color: rgba(255, 255, 255, 0.14);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.10);
+}
+
+.convergence-app-menu-category-chip:active {
+    background-color: rgba(255, 255, 255, 0.16);
+}
+
+.convergence-app-menu-category-chip-active {
+    color: rgba(255, 255, 255, 0.96);
+    background-color: rgba(255, 255, 255, 0.18);
+    border-color: rgba(255, 255, 255, 0.26);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.32), 0 2px 8px rgba(180, 210, 255, 0.12);
+}
+
+/* Grid clip viewport */
+.convergence-app-menu-grid-clip {
+    padding: 0 24px;
+}
+
+.convergence-app-menu-grid-container {
+    padding: 8px;
+}
+
+/* Grid cell — icon above label */
+.convergence-app-menu-grid-item {
+    padding: 0;
+    border-radius: 14px;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.convergence-app-menu-dnd-ghost {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 8px;
+}
+
+.convergence-drawer-floating-grid .convergence-app-icon-button:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16);
+}
+
+.convergence-drawer-floating-grid .convergence-app-icon-button:active {
+    background-color: rgba(255, 255, 255, 0.12);
+}
+
+.convergence-app-menu-grid-item:focus {
+    background-color: rgba(255, 255, 255, 0.07);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.10);
+}
+
+.convergence-app-menu-grid-item-content {
+    spacing: 0;
+    padding: 0;
+}
+
+.convergence-app-menu-grid-label {
+    color: rgba(255, 255, 255, 0.96);
+    text-align: center;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
+    font-weight: 400;
+}
+
+/* Action items in search results */
+.convergence-app-menu-action-item {
+    background-color: rgba(138, 180, 248, 0.06);
+    border: 1px solid rgba(138, 180, 248, 0.10);
+}
+
+.convergence-app-menu-action-item:hover {
+    background-color: rgba(138, 180, 248, 0.12);
+}
+
+.convergence-app-menu-action-content {
+    spacing: 0;
+    padding: 0;
+}
+
+.convergence-app-menu-action-subtitle {
+    color: rgba(255, 255, 255, 0.50);
+    text-align: center;
+}
+
+/* Scroll indicator */
+.convergence-app-menu-scroll-indicator {
+    background-color: rgba(255, 255, 255, 0.35);
+    border-radius: 2px;
+}
+
+.convergence-app-menu-scroll-fade-top {
+    background-gradient-direction: vertical;
+    background-gradient-start: rgba(18, 18, 22, 0.92);
+    background-gradient-end: rgba(18, 18, 22, 0.0);
+}
+
+.convergence-app-menu-scroll-fade-bottom {
+    background-gradient-direction: vertical;
+    background-gradient-start: rgba(18, 18, 22, 0.0);
+    background-gradient-end: rgba(18, 18, 22, 0.92);
+}
+
+/* Shared app icon button (used by taskbar, phone drawer) */
+.convergence-app-icon-button {
+    padding: 0;
+    border-radius: 14px;
+}
+
+.convergence-app-icon-button:hover {
+    background-color: rgba(255, 255, 255, 0.07);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.10);
+}
+
+.convergence-app-icon-button:active {
+    background-color: rgba(255, 255, 255, 0.12);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14);
+}
+
+.convergence-app-label {
+    color: rgba(255, 255, 255, 0.96);
+    margin-top: 4px;
+    text-align: center;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
+}
+
+.convergence-grid-icon-label {
+    color: rgba(255, 255, 255, 0.96);
+}
+
+.convergence-grid-notif-dot {
+    min-width: 18px;
+    min-height: 18px;
+    padding: 0 6px;
+    margin-top: 2px;
+    margin-right: 2px;
+    border-radius: 999px;
+    background-color: rgba(255, 102, 102, 0.95);
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+/* Scroll indicator */
+.convergence-launchpad-scroll-indicator {
+    background-color: rgba(255, 255, 255, 0.35);
+    border-radius: 2px;
+}
+
+/* Drawer DnD: merge-target highlight — Liquid Glass */
+.convergence-drawer-merge-target {
+    background-color: rgba(255, 255, 255, 0.10);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 16px;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.10);
+}
+
+/* Context Menu — Liquid Glass */
+.convergence-context-menu {
+    background-color: rgba(28, 28, 32, 0.78);
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 4px;
+    min-width: 120px;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14), 0 12px 32px rgba(0, 0, 0, 0.36);
+}
+
+.convergence-context-menu-item {
+    background-color: transparent;
+    border-radius: 8px;
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 14px;
+    padding: 10px 16px;
+}
+
+.convergence-context-menu-item:hover {
+    background-color: rgba(255, 255, 255, 0.10);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.convergence-context-menu-item:active {
+    background-color: rgba(255, 255, 255, 0.14);
+}
+
+.convergence-context-menu-separator {
+    height: 1px;
+    margin: 4px 8px;
+    background-color: rgba(255, 255, 255, 0.10);
+}
+
+/* Delete confirmation dialog */
+.convergence-delete-confirm {
+    background-color: rgba(20, 20, 24, 0.72);
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14), 0 12px 32px rgba(0, 0, 0, 0.36);
+    padding: 14px;
+    min-width: 300px;
+    spacing: 8px;
+}
+
+.convergence-delete-confirm-title {
+    color: rgba(255, 255, 255, 0.96);
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.convergence-delete-confirm-subtitle {
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 12px;
+}
+
+.convergence-delete-confirm-detail {
+    color: rgba(255, 255, 255, 0.58);
+    font-size: 11px;
+}
+
+.convergence-delete-confirm-actions {
+    spacing: 8px;
+    margin-top: 4px;
+}
+
+.convergence-delete-confirm-cancel,
+.convergence-delete-confirm-delete {
+    border-radius: 999px;
+    padding: 8px 14px;
+    min-width: 92px;
+}
+
+.convergence-delete-confirm-cancel {
+    background-color: rgba(255, 255, 255, 0.10);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: rgba(255, 255, 255, 0.92);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.10);
+}
+
+.convergence-delete-confirm-cancel:hover {
+    background-color: rgba(255, 255, 255, 0.16);
+    border-color: rgba(255, 255, 255, 0.18);
+}
+
+.convergence-delete-confirm-delete {
+    background-color: rgba(210, 60, 60, 0.78);
+    border: 1px solid rgba(255, 160, 160, 0.20);
+    color: white;
+    box-shadow: inset 0 1px 0 rgba(255, 180, 180, 0.18), 0 2px 8px rgba(180, 40, 40, 0.24);
+}
+
+.convergence-delete-confirm-delete:hover {
+    background-color: rgba(226, 74, 74, 0.84);
+    border-color: rgba(255, 180, 180, 0.28);
+}
+
+/* Drag-to-pin ghost — Liquid Glass */
+.convergence-dnd-ghost {
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 18px;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16), 0 10px 26px rgba(0, 0, 0, 0.30);
+}
+
+/* App Folders — Liquid Glass */
+.convergence-folder-icon-grid {
+    background-color: rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.10);
+}
+
+/* Folder popup — frosted glass panel */
+.convergence-folder-popup {
+    background-color: transparent;
+    border-radius: 22px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.36), inset 0 1px 0 rgba(255, 255, 255, 0.16);
+}
+
+.convergence-folder-popup-glass {
+    background-color: rgba(0, 0, 0, 0.50);
+    border-radius: 22px;
+}
+
+.convergence-folder-popup-tint {
+    background-color: rgba(255, 255, 255, 0.04);
+    border-radius: 22px;
+    border-top-width: 1px;
+    border-top-color: rgba(255, 255, 255, 0.18);
+    border-top-style: solid;
+}
+
+.convergence-folder-name-entry {
+    background-color: transparent;
+    border-radius: 999px;
+    padding: 4px 14px;
+    color: rgba(255, 255, 255, 0.94);
+    font-size: 20px;
+    font-weight: 400;
+    caret-color: white;
+    selection-background-color: rgba(255, 255, 255, 0.20);
+    border: 1px solid transparent;
+    min-width: 180px;
+    text-align: center;
+}
+
+.convergence-folder-name-entry:focus {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.20);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14);
+}
+
+.convergence-page-dots {
+    padding: 2px 0 4px 0;
+}
+
+.convergence-page-dot {
+    background-color: rgba(255, 255, 255, 0.24);
+    border-radius: 3px;
+    width: 6px;
+    height: 6px;
+    margin: 0 3px;
+}
+
+.convergence-page-dot-active {
+    background-color: rgba(255, 255, 255, 0.88);
+}
+
+.convergence-page-dot-pill {
+    width: 28px;
+    height: 4px;
+    border-radius: 2px;
+    background-color: rgba(255, 255, 255, 0.55);
+}
+
+
+/* ===== Recent Apps ===== */
+
+.convergence-recent-apps-backdrop {
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+.convergence-recent-apps-card {
+    background-color: rgb(30, 30, 34);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.convergence-recent-apps-card-header {
+    spacing: 8px;
+    padding: 0 4px;
+}
+
+.convergence-recent-apps-card-app-name {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.convergence-recent-apps-clear-all {
+    background-color: rgba(255, 255, 255, 0.10);
+    border-radius: 20px;
+    padding: 10px 28px;
+}
+
+.convergence-recent-apps-clear-all:hover {
+    background-color: rgba(255, 255, 255, 0.18);
+}
+
+.convergence-recent-apps-clear-all-label {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.convergence-recent-apps-empty {
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 16px;
+}
+
+/* Split-Screen */
+.convergence-split-backdrop {
+    background-color: rgba(0, 0, 0, 0.55);
+}
+
+.convergence-split-zone {
+    background-color: transparent;
+}
+
+.convergence-split-zone-active {
+    background-color: rgba(80, 160, 255, 0.22);
+}
+
+.convergence-split-divider-preview {
+    background-color: rgba(255, 255, 255, 0.35);
+}
+
+.convergence-split-divider {
+    background-color: transparent;
+}
+
+.convergence-split-divider-handle {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 3px;
+    width: 48px;
+    height: 6px;
+}
+
+.convergence-split-divider-handle:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.convergence-split-divider-handle-horizontal {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 3px;
+    width: 6px;
+    height: 48px;
+}
+
+.convergence-split-divider-handle-horizontal:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.convergence-split-control-tray {
+    background-color: rgba(30, 30, 30, 0.92);
+    border-radius: 20px;
+    padding: 6px 14px;
+    spacing: 14px;
+}
+
+.convergence-split-control-btn {
+    min-width: 36px;
+    min-height: 36px;
+    border-radius: 18px;
+    background-color: rgba(255, 255, 255, 0.12);
+    border: none;
+}
+
+.convergence-split-control-btn StIcon {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.convergence-split-control-btn:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+.convergence-split-control-btn:active {
+    background-color: rgba(255, 255, 255, 0.35);
+}
+
+
+/* ===== Home Screen ===== */
+
+.convergence-home-screen {
+    background-color: transparent;
+}
+
+/* Home screen icons */
+.convergence-home-icon-button {
+    padding: 0;
+    border-radius: 12px;
+}
+
+.convergence-home-icon-button:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.convergence-home-icon-button:active {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.convergence-home-icon-selected {
+    background-color: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.convergence-home-dnd-ready {
+    background-color: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.34);
+    border-radius: 16px;
+    box-shadow: 0 0 0 1px rgba(138, 180, 248, 0.28);
+}
+
+.convergence-home-icon-label {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 11px;
+    margin-top: 4px;
+    text-align: center;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+/* Spring-loaded: cell outlines for empty cells */
+.convergence-home-cell-outline {
+    border: 1px solid rgba(255, 255, 255, 0.26);
+    border-radius: 16px;
+    background-color: rgba(255, 255, 255, 0.025);
+}
+
+/* Spring-loaded: merge-target cell (occupied by app/folder) */
+.convergence-home-cell-merge-target {
+    background-color: rgba(255, 255, 255, 0.11);
+    border: 2px solid rgba(255, 255, 255, 0.52);
+    border-radius: 16px;
+}
+
+/* Spring-loaded: highlighted cell on hover */
+.convergence-home-cell-highlight {
+    background-color: rgba(255, 255, 255, 0.17);
+    border: 2px solid rgba(255, 255, 255, 0.84);
+    border-radius: 16px;
+    box-shadow: 0 0 0 1px rgba(138, 180, 248, 0.36);
+}
+
+/* Desktop taskbar scroll view — hide scrollbar, allow overflow scroll */
+.convergence-taskbar-scrollview StScrollBar {
+    width: 0;
+    min-width: 0;
+}
+
+/* Desktop taskbar background (left-side bar) */
+.convergence-taskbar-background {
+    background-color: rgba(0, 0, 0, 0.20);
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.convergence-taskbar-corner {
+    /* Cairo-drawn concave corners — no CSS needed, just a placeholder */
+}
+
+.convergence-screen-corner {
+    /* Cairo-drawn convex display corners */
+}
+
+/* Home screen dock */
+.convergence-dock {
+    background-color: rgba(0, 0, 0, 0.35);
+    border-radius: 24px;
+    padding: 8px 16px;
+    margin-bottom: 16px;
+}
+
+.convergence-drawer-icon {
+    background-color: transparent;
+    padding: 8px;
+    border-radius: 12px;
+    margin: 0 4px;
+}
+
+.convergence-drawer-icon:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.convergence-drawer-icon:active {
+    background-color: rgba(255, 255, 255, 0.18);
+}
+
+.convergence-drawer-icon .convergence-app-icon-button:hover,
+.convergence-drawer-icon .convergence-app-icon-button:active {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.convergence-dock-icon-running {
+    background-color: rgba(255, 255, 255, 0.40);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.40);
+}
+
+.convergence-dock-icon-focused {
+    background-color: rgba(255, 255, 255, 0.50);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.50);
+}
+
+.convergence-dock-icon-running:hover {
+    background-color: rgba(255, 255, 255, 0.40);
+}
+
+.convergence-dock-icon-focused:hover {
+    background-color: rgba(255, 255, 255, 0.50);
+}
+
+.convergence-dock-icon-running-current {
+    box-shadow: inset 0 -2px 0 rgba(255, 255, 255, 0.92);
+}
+
+.convergence-dock-icon-running-other {
+    box-shadow: inset 0 -2px 0 rgba(255, 255, 255, 0.52);
+}
+
+.convergence-dock-icon-urgent {
+    box-shadow: inset 0 -2px 0 rgba(255, 102, 102, 0.98), 0 0 0 1px rgba(255, 102, 102, 0.62);
+}
+
+
+/* ===== Widgets ===== */
+
+.convergence-widget-container {
+    background-color: transparent;
+    border-radius: 24px;
+    border: none;
+}
+
+/* Weather and hw_monitor widgets handle their own backgrounds internally;
+   keep the container transparent so we don't stack two dark layers. */
+.convergence-widget-type-weather,
+.convergence-widget-type-hw-monitor {
+    background-color: transparent;
+    border-radius: 16px;
+}
+
+/* Sticky note provides its own colored background. */
+.convergence-widget-type-sticky-note {
+    background-color: transparent;
+    border: none;
+    border-radius: 16px;
+}
+
+/* Clock widget content */
+.convergence-widget-clock-content {
+    padding: 4px 8px;
+}
+
+.convergence-widget-clock-time {
+    color: white;
+    font-size: 56px;
+    font-weight: 200;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.convergence-widget-clock-date {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 14px;
+    font-weight: 400;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    margin-top: 0px;
+}
+
+/* Weather widget content */
+.convergence-widget-weather-content {
+    padding: 16px 16px 8px 16px;
+}
+
+.convergence-widget-weather-temp {
+    color: white;
+    font-size: 32px;
+    font-weight: 300;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.convergence-widget-weather-condition {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 11px;
+    font-weight: 400;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    margin-top: 0px;
+}
+
+.convergence-widget-weather-location {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 10px;
+    font-weight: 400;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    margin-top: 2px;
+}
+
+.convergence-widget-weather-icon {
+    color: white;
+    font-size: 28px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.convergence-widget-weather-refresh {
+    border-radius: 99px;
+}
+
+.convergence-widget-weather-refresh:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+}
+
+.convergence-widget-weather-refresh:active {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Weather widget — expanded layout elements */
+.convergence-widget-weather-separator-v {
+    background-color: rgba(255, 255, 255, 0.15);
+    width: 1px;
+    margin: 4px 8px;
+}
+
+.convergence-widget-weather-separator-h {
+    background-color: rgba(255, 255, 255, 0.15);
+    height: 1px;
+    margin: 4px 0;
+}
+
+.convergence-widget-weather-detail-row {
+    margin-top: 2px;
+    spacing: 8px;
+}
+
+.convergence-widget-weather-detail-text {
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 10px;
+    font-weight: 400;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.convergence-widget-weather-forecast-row {
+    spacing: 2px;
+}
+
+.convergence-widget-weather-forecast-slot {
+    spacing: 1px;
+    padding: 1px 2px;
+}
+
+/* Small (1-row wide): compact forecast items */
+.convergence-widget-weather-forecast-time-sm {
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 8px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.convergence-widget-weather-forecast-icon-sm {
+    color: white;
+    font-size: 14px;
+    text-align: center;
+}
+
+.convergence-widget-weather-forecast-temp-sm {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 9px;
+    font-weight: 400;
+    text-align: center;
+}
+
+/* Tall (2+ rows): roomier forecast items */
+.convergence-widget-weather-forecast-time {
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 10px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.convergence-widget-weather-forecast-icon {
+    color: white;
+    font-size: 18px;
+    text-align: center;
+}
+
+.convergence-widget-weather-forecast-temp {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 11px;
+    font-weight: 500;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* At-a-Glance widget */
+.convergence-widget-ataglance-content {
+    padding: 10px 14px;
+}
+
+.convergence-widget-ataglance-date {
+    color: rgba(255, 255, 255, 0.96);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.convergence-widget-ataglance-info {
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+/* Widget resize mode */
+.convergence-widget-resize-outline {
+    border: 2px solid rgba(255, 255, 255, 0.88);
+    border-radius: 26px;
+    box-shadow: 0 0 0 1px rgba(138, 180, 248, 0.42);
+}
+
+.convergence-widget-resize-handle {
+    background-color: rgba(245, 248, 255, 0.98);
+    border: 2px solid rgba(138, 180, 248, 0.95);
+    border-radius: 16px;
+    width: 24px;
+    height: 24px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.28);
+}
+
+/* DnD remove zone — Liquid Glass pill */
+.convergence-dnd-remove-zone {
+    background-color: rgba(0, 0, 0, 0.40);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 999px;
+    padding: 10px 22px;
+    spacing: 10px;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14), 0 8px 24px rgba(0, 0, 0, 0.28);
+}
+
+.convergence-dnd-remove-zone-active {
+    background-color: rgba(200, 56, 56, 0.78);
+    border-color: rgba(255, 180, 180, 0.24);
+    box-shadow: inset 0 1px 0 rgba(255, 200, 200, 0.20), 0 8px 24px rgba(160, 30, 30, 0.32);
+}
+
+.convergence-dnd-remove-zone-icon {
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 17px;
+}
+
+.convergence-dnd-remove-zone-label {
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Widget DnD ghost — Liquid Glass */
+.convergence-widget-dnd-ghost {
+    background-color: rgba(255, 255, 255, 0.10);
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    border-radius: 22px;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18), 0 12px 28px rgba(0, 0, 0, 0.30);
+}
+
+.convergence-widget-ghost-label {
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+}
+
+/* Widget picker — bottom sheet */
+.convergence-widget-picker {
+    background-color: transparent;
+    border-radius: 24px 24px 0 0;
+}
+
+.convergence-widget-picker-glass {
+    background-color: rgba(10, 10, 12, 0.92);
+    border-radius: 24px 24px 0 0;
+}
+
+.convergence-widget-picker-tint {
+    background-color: rgba(28, 28, 32, 0.40);
+    border-radius: 24px 24px 0 0;
+    border-top-width: 1px;
+    border-top-color: rgba(255, 255, 255, 0.28);
+    border-top-style: solid;
+}
+
+.convergence-widget-picker-handle {
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 2px;
+    width: 40px;
+    height: 4px;
+    margin: 12px 0 8px 0;
+}
+
+.convergence-widget-picker-title {
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.convergence-widget-picker-item {
+    background-color: rgba(255, 255, 255, 0.06);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.convergence-widget-picker-preview {
+    background-color: rgba(255, 255, 255, 0.04);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.convergence-widget-picker-item-label {
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.convergence-widget-picker-item-desc {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 13px;
+    margin-top: 2px;
+}
+
+.convergence-widget-picker-add-btn {
+    background-color: rgba(138, 180, 248, 0.85);
+    border-radius: 20px;
+    color: rgb(32, 33, 36);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 20px;
+}
+
+.convergence-widget-picker-add-btn:hover {
+    background-color: rgba(138, 180, 248, 1.0);
+}
+
+.convergence-widget-picker-add-btn:active {
+    background-color: rgba(168, 199, 250, 1.0);
+}
+
+.convergence-widget-picker-added {
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 16px;
+}
+
+
+/* ===== Taskbar (Desktop) ===== */
+
+.convergence-taskbar-icon {
+    background-color: transparent;
+    border-radius: 8px;
+    padding: 0;
+    margin: 0;
+}
+
+.convergence-taskbar-icon:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.convergence-taskbar-icon:active {
+    background-color: rgba(255, 255, 255, 0.18);
+}
+
+/* When overlay highlight is active, suppress all CSS background/border states */
+.convergence-taskbar-icon.no-highlight:hover,
+.convergence-taskbar-icon.no-highlight:active,
+.convergence-taskbar-icon.no-highlight.convergence-taskbar-icon-running,
+.convergence-taskbar-icon.no-highlight.convergence-taskbar-icon-focused,
+.convergence-taskbar-icon.no-highlight.convergence-taskbar-icon-running:hover,
+.convergence-taskbar-icon.no-highlight.convergence-taskbar-icon-focused:hover {
+    background-color: transparent;
+    border-bottom-color: transparent;
+    border-bottom-width: 0;
+    filter: none;
+}
+
+/* Running app indicator (state marker — visual handled by accent/fill system) */
+.convergence-taskbar-icon-running {
+    background-color: transparent;
+    border-bottom-width: 0;
+}
+
+/* Focused app indicator (state marker — visual handled by accent/fill system) */
+.convergence-taskbar-icon-focused {
+    background-color: transparent;
+    border-bottom-width: 0;
+}
+
+.convergence-taskbar-icon-running:hover {
+    background-color: transparent;
+}
+
+.convergence-taskbar-icon-running:active {
+    background-color: transparent;
+}
+
+.convergence-taskbar-icon-focused:hover {
+    background-color: transparent;
+}
+
+.convergence-taskbar-icon-focused:active {
+    background-color: transparent;
+}
+
+/* Per-app instance indicators (dot count = window instance count) */
+.convergence-taskbar-indicators {
+    spacing: 4px;
+    min-height: 8px;
+    margin-top: 3px;
+}
+
+.convergence-taskbar-instance-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 3px;
+    background-color: rgba(255, 255, 255, 0.62);
+}
+
+.convergence-taskbar-indicators-focused .convergence-taskbar-instance-dot {
+    width: 6px;
+    height: 6px;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Accent-aware running/focused tints from GNOME system accent setting */
+.convergence-taskbar-icon-running.convergence-taskbar-accent-blue {
+    background-color: rgba(53, 132, 228, 0.40);
+    border-bottom-color: rgba(53, 132, 228, 0.40);
+}
+
+.convergence-taskbar-icon-focused.convergence-taskbar-accent-blue {
+    background-color: rgba(53, 132, 228, 0.50);
+    border-bottom-color: rgba(53, 132, 228, 0.50);
+}
+
+.convergence-taskbar-icon-running.convergence-taskbar-accent-teal {
+    background-color: rgba(33, 144, 164, 0.40);
+    border-bottom-color: rgba(33, 144, 164, 0.40);
+}
+
+.convergence-taskbar-icon-focused.convergence-taskbar-accent-teal {
+    background-color: rgba(33, 144, 164, 0.50);
+    border-bottom-color: rgba(33, 144, 164, 0.50);
+}
+
+.convergence-taskbar-icon-running.convergence-taskbar-accent-green {
+    background-color: rgba(46, 194, 126, 0.40);
+    border-bottom-color: rgba(46, 194, 126, 0.40);
+}
+
+.convergence-taskbar-icon-focused.convergence-taskbar-accent-green {
+    background-color: rgba(46, 194, 126, 0.50);
+    border-bottom-color: rgba(46, 194, 126, 0.50);
+}
+
+.convergence-taskbar-icon-running.convergence-taskbar-accent-yellow {
+    background-color: rgba(246, 211, 45, 0.40);
+    border-bottom-color: rgba(246, 211, 45, 0.40);
+}
+
+.convergence-taskbar-icon-focused.convergence-taskbar-accent-yellow {
+    background-color: rgba(246, 211, 45, 0.50);
+    border-bottom-color: rgba(246, 211, 45, 0.50);
+}
+
+.convergence-taskbar-icon-running.convergence-taskbar-accent-orange {
+    background-color: rgba(255, 120, 0, 0.40);
+    border-bottom-color: rgba(255, 120, 0, 0.40);
+}
+
+.convergence-taskbar-icon-focused.convergence-taskbar-accent-orange {
+    background-color: rgba(255, 120, 0, 0.50);
+    border-bottom-color: rgba(255, 120, 0, 0.50);
+}
+
+.convergence-taskbar-icon-running.convergence-taskbar-accent-red {
+    background-color: rgba(230, 57, 70, 0.40);
+    border-bottom-color: rgba(230, 57, 70, 0.40);
+}
+
+.convergence-taskbar-icon-focused.convergence-taskbar-accent-red {
+    background-color: rgba(230, 57, 70, 0.50);
+    border-bottom-color: rgba(230, 57, 70, 0.50);
+}
+
+.convergence-taskbar-icon-running.convergence-taskbar-accent-pink {
+    background-color: rgba(214, 51, 132, 0.40);
+    border-bottom-color: rgba(214, 51, 132, 0.40);
+}
+
+.convergence-taskbar-icon-focused.convergence-taskbar-accent-pink {
+    background-color: rgba(214, 51, 132, 0.50);
+    border-bottom-color: rgba(214, 51, 132, 0.50);
+}
+
+.convergence-taskbar-icon-running.convergence-taskbar-accent-purple {
+    background-color: rgba(125, 95, 255, 0.40);
+    border-bottom-color: rgba(125, 95, 255, 0.40);
+}
+
+.convergence-taskbar-icon-focused.convergence-taskbar-accent-purple {
+    background-color: rgba(125, 95, 255, 0.50);
+    border-bottom-color: rgba(125, 95, 255, 0.50);
+}
+
+.convergence-taskbar-icon-running.convergence-taskbar-accent-slate {
+    background-color: rgba(129, 140, 153, 0.40);
+    border-bottom-color: rgba(129, 140, 153, 0.40);
+}
+
+.convergence-taskbar-icon-focused.convergence-taskbar-accent-slate {
+    background-color: rgba(129, 140, 153, 0.50);
+    border-bottom-color: rgba(129, 140, 153, 0.50);
+}
+
+/* Optional highlight layer suppression classes (settings-driven) */
+.convergence-taskbar-no-highlight-fill.convergence-taskbar-icon-running,
+.convergence-taskbar-no-highlight-fill.convergence-taskbar-icon-focused,
+.convergence-taskbar-no-highlight-fill.convergence-taskbar-icon-running.convergence-taskbar-accent-blue,
+.convergence-taskbar-no-highlight-fill.convergence-taskbar-icon-focused.convergence-taskbar-accent-blue,
+.convergence-taskbar-no-highlight-fill.convergence-taskbar-icon-running.convergence-taskbar-accent-teal,
+.convergence-taskbar-no-highlight-fill.convergence-taskbar-icon-focused.convergence-taskbar-accent-teal,
+.convergence-taskbar-no-highlight-fill.convergence-taskbar-icon-running.convergence-taskbar-accent-green,
+.convergence-taskbar-no-highlight-fill.convergence-taskbar-icon-focused.convergence-taskbar-accent-green,
+.convergence-taskbar-no-highlight-fill.convergence-taskbar-icon-running.convergence-taskbar-accent-yellow,
+.convergence-taskbar-no-highlight-fill.convergence-taskbar-icon-focused.convergence-taskbar-accent-yellow,
+.convergence-taskbar-no-highlight-fill.convergence-taskbar-icon-running.convergence-taskbar-accent-orange,
+.convergence-taskbar-no-highlight-fill.convergence-taskbar-icon-focused.convergence-taskbar-accent-orange,
+.convergence-taskbar-no-highlight-fill.convergence-taskbar-icon-running.convergence-taskbar-accent-red,
+.convergence-taskbar-no-highlight-fill.convergence-taskbar-icon-focused.convergence-taskbar-accent-red,
+.convergence-taskbar-no-highlight-fill.convergence-taskbar-icon-running.convergence-taskbar-accent-pink,
+.convergence-taskbar-no-highlight-fill.convergence-taskbar-icon-focused.convergence-taskbar-accent-pink,
+.convergence-taskbar-no-highlight-fill.convergence-taskbar-icon-running.convergence-taskbar-accent-purple,
+.convergence-taskbar-no-highlight-fill.convergence-taskbar-icon-focused.convergence-taskbar-accent-purple,
+.convergence-taskbar-no-highlight-fill.convergence-taskbar-icon-running.convergence-taskbar-accent-slate,
+.convergence-taskbar-no-highlight-fill.convergence-taskbar-icon-focused.convergence-taskbar-accent-slate {
+    background-color: transparent;
+}
+
+.convergence-taskbar-no-highlight-edge.convergence-taskbar-icon-running,
+.convergence-taskbar-no-highlight-edge.convergence-taskbar-icon-focused {
+    border-bottom-width: 0;
+    border-bottom-color: transparent;
+}
+
+.convergence-taskbar-icon-running.convergence-taskbar-accent-blue:hover,
+.convergence-taskbar-icon-running.convergence-taskbar-accent-teal:hover,
+.convergence-taskbar-icon-running.convergence-taskbar-accent-green:hover,
+.convergence-taskbar-icon-running.convergence-taskbar-accent-yellow:hover,
+.convergence-taskbar-icon-running.convergence-taskbar-accent-orange:hover,
+.convergence-taskbar-icon-running.convergence-taskbar-accent-red:hover,
+.convergence-taskbar-icon-running.convergence-taskbar-accent-pink:hover,
+.convergence-taskbar-icon-running.convergence-taskbar-accent-purple:hover,
+.convergence-taskbar-icon-running.convergence-taskbar-accent-slate:hover {
+    filter: brightness(1.08);
+}
+
+.convergence-taskbar-icon-focused.convergence-taskbar-accent-blue:hover,
+.convergence-taskbar-icon-focused.convergence-taskbar-accent-teal:hover,
+.convergence-taskbar-icon-focused.convergence-taskbar-accent-green:hover,
+.convergence-taskbar-icon-focused.convergence-taskbar-accent-yellow:hover,
+.convergence-taskbar-icon-focused.convergence-taskbar-accent-orange:hover,
+.convergence-taskbar-icon-focused.convergence-taskbar-accent-red:hover,
+.convergence-taskbar-icon-focused.convergence-taskbar-accent-pink:hover,
+.convergence-taskbar-icon-focused.convergence-taskbar-accent-purple:hover,
+.convergence-taskbar-icon-focused.convergence-taskbar-accent-slate:hover {
+    filter: brightness(1.08);
+}
+
+.convergence-taskbar-icon-running-current {
+    box-shadow: inset 0 -2px 0 rgba(255, 255, 255, 0.92);
+}
+
+.convergence-taskbar-icon-running-other {
+    box-shadow: inset 0 -2px 0 rgba(255, 255, 255, 0.52);
+}
+
+.convergence-taskbar-icon-urgent {
+    box-shadow: inset 0 -2px 0 rgba(255, 102, 102, 0.98), 0 0 0 1px rgba(255, 102, 102, 0.62);
+}
+
+.convergence-taskbar-tooltip {
+    background-color: rgba(32, 34, 38, 0.95);
+    border-radius: 8px;
+    color: rgba(255, 255, 255, 0.96);
+    font-size: 12pt;
+    font-weight: 500;
+    padding: 6px 10px;
+}
+
+.convergence-taskbar-dnd-placeholder {
+    border-radius: 10px;
+    border: 1px dashed rgba(190, 215, 255, 0.55);
+    background-color: rgba(120, 165, 236, 0.16);
+}
+
+/* Taskbar drop highlight — Liquid Glass */
+.convergence-taskbar-drop-highlight {
+    background-color: rgba(255, 255, 255, 0.10);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 12px;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+/* Taskbar notification badges */
+.convergence-taskbar-notif-dot {
+    background-color: rgb(220, 50, 47);
+    border-radius: 7px;
+    min-width: 14px;
+    min-height: 14px;
+    padding: 0 3px;
+    margin: 2px 2px 0 0;
+}
+
+.convergence-taskbar-notif-dot StLabel {
+    color: white;
+    font-size: 9px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Taskbar section wrapper (large displays) */
+.convergence-taskbar-section {
+    background-color: rgba(10, 10, 12, 0.92);
+    border-radius: 24px;
+    box-shadow: inset 0 0 0 9999px rgba(28, 28, 32, 0.40);
+    border-top-width: 1px;
+    border-top-color: rgba(255, 255, 255, 0.28);
+    border-top-style: solid;
+    padding: 4px 12px 6px 12px;
+    margin: 0;
+    transition-duration: 220ms;
+    transition-property: border-radius, padding, background-color, box-shadow, border-top-color;
+    transition-timing-function: ease-out-cubic;
+}
+
+/* Detached taskbar — Blur My Shell dark dash background */
+.convergence-taskbar-section-detached {
+    background-color: rgba(0, 0, 0, 0.35);
+    border-radius: 18px;
+    padding: 4px 12px 6px 12px;
+    box-shadow: none;
+    border-top-width: 0;
+    border-top-color: transparent;
+    border-top-style: none;
+    transition-duration: 220ms;
+    transition-property: border-radius, padding, background-color, box-shadow, border-top-color;
+    transition-timing-function: ease-out-cubic;
+}
+
+/* Detached taskbar drop-shadow (togglable) */
+.convergence-taskbar-section-detached-shadow {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.22), 0 1px 4px rgba(0, 0, 0, 0.10);
+}
+
+/* Detached taskbar: GNOME 49 dash-like running/focused indicators */
+.convergence-taskbar-section-detached .convergence-taskbar-icon-running,
+.convergence-taskbar-section-detached .convergence-taskbar-icon-focused {
+    background-color: transparent;
+    border-bottom-width: 0;
+    border-bottom-color: transparent;
+    box-shadow: none;
+}
+
+.convergence-taskbar-section-detached .convergence-taskbar-icon-running-current {
+    box-shadow: none;
+}
+
+.convergence-taskbar-section-detached .convergence-taskbar-icon-running-other {
+    box-shadow: none;
+}
+
+.convergence-taskbar-section-detached .convergence-taskbar-icon-focused {
+    box-shadow: none;
+}
+
+.convergence-taskbar-section-detached .convergence-taskbar-icon:hover {
+    background-color: rgba(230, 230, 230, 0.08);
+}
+
+.convergence-taskbar-section-detached .convergence-taskbar-icon:active {
+    background-color: rgba(230, 230, 230, 0.12);
+}
+
+.convergence-taskbar-section-detached .convergence-taskbar-icon.no-highlight:hover,
+.convergence-taskbar-section-detached .convergence-taskbar-icon.no-highlight:active {
+    background-color: transparent;
+}
+
+.convergence-taskbar-section-detached .convergence-taskbar-indicators {
+    spacing: 0;
+    min-height: 4px;
+    margin-top: 1px;
+}
+
+.convergence-taskbar-section-detached .convergence-taskbar-instance-dot {
+    width: 5px;
+    height: 2px;
+    border-radius: 999px;
+    background-color: rgba(242, 246, 255, 0.88);
+}
+
+.convergence-taskbar-section-detached
+.convergence-taskbar-indicators-focused
+.convergence-taskbar-instance-dot {
+    width: 6px;
+    height: 2px;
+    background-color: rgba(252, 254, 255, 0.98);
+}
+
+/* Side taskbar: rotate indicator dots 90 deg (vertical pills) */
+.convergence-taskbar-indicators-vertical .convergence-taskbar-instance-dot {
+    width: 5px;
+    height: 5px;
+}
+
+.convergence-taskbar-section-detached
+.convergence-taskbar-indicators-vertical
+.convergence-taskbar-instance-dot {
+    width: 2px;
+    height: 5px;
+}
+
+.convergence-taskbar-section-detached
+.convergence-taskbar-indicators-vertical.convergence-taskbar-indicators-focused
+.convergence-taskbar-instance-dot {
+    width: 2px;
+    height: 6px;
+}
+
+/* Show Apps button in taskbar (non-touchscreen large displays) */
+.convergence-taskbar-show-apps {
+    background-color: transparent;
+    border-radius: 12px;
+    padding: 0;
+    margin: 0;
+}
+
+.convergence-taskbar-show-apps:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.convergence-taskbar-show-apps:active {
+    background-color: rgba(255, 255, 255, 0.18);
+}
+
+.convergence-taskbar-show-apps.no-highlight:hover,
+.convergence-taskbar-show-apps.no-highlight:active {
+    background-color: transparent;
+}
+
+.convergence-taskbar-show-apps-icon {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Separator between pinned and running apps */
+.convergence-taskbar-separator {
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0 4px;
+    border-radius: 1px;
+}
+
+.convergence-taskbar-separator-vertical {
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 4px 0;
+    border-radius: 1px;
+}
+
+/* Taskbar panel area */
+.convergence-taskbar-panel-area {
+    spacing: 4px;
+}
+
+/* Replicate #panel scoped rules for reparented panel boxes */
+.convergence-taskbar-panel-area .panel-button {
+    -natural-hpadding: 12px;
+    -minimum-hpadding: 6px;
+}
+
+.convergence-taskbar-panel-area .panel-button:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.convergence-taskbar-panel-area .panel-button:active,
+.convergence-taskbar-panel-area .panel-button:checked {
+    background-color: rgba(255, 255, 255, 0.14);
+}
+
+.convergence-taskbar-panel-area .panel-button .system-status-icon {
+    icon-size: 1.091em;
+    padding: 0 6px;
+    margin: 0 4px;
+}
+
+.convergence-taskbar-panel-area .panel-button .panel-status-indicators-box {
+    spacing: 4px;
+}
+
+.convergence-taskbar-panel-area .panel-button .panel-status-indicators-box > .system-status-icon {
+    padding: 0;
+}
+
+.convergence-taskbar-panel-area .panel-button.screen-recording-indicator StIcon,
+.convergence-taskbar-panel-area .panel-button.screen-sharing-indicator StIcon {
+    icon-size: 1.091em;
+}
+
+.convergence-taskbar-panel-area .panel-button.clock-display .messages-indicator {
+    icon-size: 1.091em;
+}
+
+.convergence-taskbar-system-area {
+    spacing: 6px;
+    margin-left: 6px;
+}
+
+.convergence-taskbar-system-button {
+    border-radius: 8px;
+    padding: 4px 8px;
+    color: rgba(236, 241, 252, 0.92);
+    background-color: transparent;
+}
+
+.convergence-taskbar-system-button:hover {
+    background-color: rgba(255, 255, 255, 0.10);
+}
+
+.convergence-taskbar-system-button:active {
+    background-color: rgba(255, 255, 255, 0.18);
+}
+
+.convergence-taskbar-clock-button {
+    min-width: 74px;
+    padding: 4px 6px;
+}
+
+.convergence-taskbar-clock-time {
+    font-size: 11px;
+    font-weight: 600;
+    color: rgba(242, 246, 255, 0.94);
+}
+
+.convergence-taskbar-clock-date {
+    font-size: 9.5px;
+    color: rgba(210, 220, 238, 0.78);
+}
+
+.convergence-taskbar-system-icon {
+    color: rgba(236, 241, 252, 0.88);
+}
+
+.convergence-taskbar-indicators-btn {
+    padding: 2px 4px;
+}
+
+
+/* ===== App Menu (Desktop) ===== */
+
+/* (Shares drawer styles above — these are desktop-specific overrides) */
+
+
+/* ===== Window Effects ===== */
+
+/* Window preview popup */
+.convergence-window-preview-popup {
+    background-color: rgba(30, 30, 34, 0.95);
+    border-radius: 12px;
+    padding: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+}
+
+.convergence-window-preview-header {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 12px;
+    font-weight: bold;
+    padding: 2px 4px 6px 4px;
+}
+
+.convergence-window-preview-row {
+    spacing: 8px;
+}
+
+.convergence-window-preview-thumb {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.convergence-window-preview-thumb:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.06);
+}
+
+.convergence-window-preview-title {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 10px;
+    text-align: center;
+    padding: 3px 2px 0 2px;
+}
+
+.convergence-window-preview-close {
+    background-color: rgba(200, 50, 50, 0.8);
+    border-radius: 8px;
+    min-width: 16px;
+    min-height: 16px;
+    padding: 0;
+}
+
+.convergence-window-preview-close:hover {
+    background-color: rgba(220, 60, 60, 1.0);
+}
+
+.convergence-window-preview-close StIcon {
+    icon-size: 10px;
+    color: white;
+}
+
+
+/* ===== Splash Screen ===== */
+
+.convergence-splash {
+    background-color: rgba(0, 0, 0, 0.92);
+}
+
+.convergence-splash-label {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 16px;
+    font-weight: 400;
+}
+
+
+/* ===== Edge Gestures ===== */
+
+.convergence-edge-zone {
+    background-color: transparent;
+}
+
+.convergence-back-arrow {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+    padding: 8px;
+}
+
+
+/* ===== App Drawer DnD ===== */
+
+.convergence-drawer-drop-target {
+    background-color: rgba(138, 180, 248, 0.15);
+    border-radius: 12px;
+    border: 2px solid rgba(138, 180, 248, 0.4);
+}
+
+.convergence-drawer-dock-drop-highlight {
+    background-color: rgba(138, 180, 248, 0.08);
+    border-radius: 16px;
+    border: 1px solid rgba(138, 180, 248, 0.25);
+}
+
+.convergence-dock-drop-indicator {
+    background-color: rgba(138, 180, 248, 0.85);
+    border-radius: 2px;
+    margin: 0 2px;
+}
+
+
+/* ===== Alert Slider ===== */
+
+/* (Reserved for future alert slider styles) */
+
+
+/* ===== On-Screen Keyboard (Futo-style) ===== */
+
+.convergence-osk {
+    background-color: #121316;
+    padding: 4px 2px 0 2px;
+}
+
+/* Default key style — applied by CSS cascade the instant keys are
+   created, eliminating the flash of unstyled GNOME theme. Special
+   keys (space, enter, shift, function) are overridden via inline
+   styles in _applyKeyStyles(). */
+.convergence-osk .key-container {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.convergence-osk .keyboard-key {
+    background-color: #252830;
+    border-radius: 8px;
+    border: none;
+    color: #E6E6EE;
+    font-size: 23px;
+    font-weight: 400;
+    margin: 2px 3px;
+}
+
+/* Special key overrides via CSS class — applied by _applyKeyStyles()
+   so these persist even before inline styles are set. */
+.convergence-osk .convergence-osk-space {
+    background-color: #17181C;
+    color: rgba(230, 230, 238, 0.5);
+    font-size: 11px;
+    border-radius: 9px;
+}
+
+.convergence-osk .convergence-osk-func {
+    background-color: #17181C;
+    color: rgba(230, 230, 238, 0.7);
+    font-size: 11px;
+}
+
+.convergence-osk .convergence-osk-enter {
+    background-color: #8AB4F8;
+    color: #202124;
+    font-weight: 500;
+}
+
+/* Key hover/active — Futo dark theme */
+.convergence-osk .keyboard-key:hover {
+    background-color: #3C3F47;
+}
+
+.convergence-osk .keyboard-key:active,
+.convergence-osk .keyboard-key:active:hover {
+    background-color: #3C3F47;
+}
+
+
+/* Suggestion bar — 40dp, matches keyboard bg */
+.convergence-osk-suggestions {
+    min-height: 40px;
+    padding: 0 8px;
+    background-color: #121316;
+    spacing: 2px;
+}
+
+.convergence-osk-suggestions StButton {
+    color: #E6E6EE;
+    font-size: 18px;
+    font-weight: 400;
+    min-height: 36px;
+    padding: 4px 16px;
+    border-radius: 18px;
+    background-color: transparent;
+    border: none;
+}
+
+.convergence-osk-suggestions StButton:hover {
+    background-color: rgba(230, 230, 238, 0.06);
+}
+
+.convergence-osk-suggestions StButton:active {
+    background-color: rgba(230, 230, 238, 0.10);
+}
+
+/* Key hint labels — top-right corner, Futo style */
+.convergence-osk-hint {
+    color: rgba(230, 230, 238, 0.5);
+    font-size: 8px;
+    font-weight: 400;
+}
+
+/* Key press preview popup — magnified letter above thumb */
+.convergence-osk-preview {
+    background-color: #3C3F47;
+    color: #E6E6EE;
+    font-size: 22px;
+    font-weight: 400;
+    border-radius: 9px;
+    padding: 8px 14px;
+    text-align: center;
+    min-width: 40px;
+    min-height: 36px;
+}
+
+/* Dismiss bar — same bg as keyboard */
+.convergence-osk-dismiss-bar {
+    background-color: #121316;
+    min-height: 48px;
+    padding: 0 12px;
+}
+
+.convergence-osk-dismiss-btn {
+    min-width: 48px;
+    min-height: 48px;
+    border-radius: 24px;
+}
+
+.convergence-osk-dismiss-btn:hover {
+    background-color: rgba(230, 230, 238, 0.06);
+    color: #E6E6EE;
+}
+
+.convergence-osk-dismiss-btn:active {
+    background-color: rgba(230, 230, 238, 0.10);
+    color: white;
+}
+
+/* ===== Volume OSD (Phone) ===== */
+
+.convergence-volume-osd {
+    background-color: rgba(0, 0, 0, 0.85);
+    border-radius: 999px;
+    padding: 12px 10px;
+    spacing: 10px;
+}
+
+.convergence-volume-osd-slider-box {
+    /* Container for track + fill + icon — clips fill inside track */
+}
+
+.convergence-volume-osd-track {
+    background-color: rgba(255, 255, 255, 0.12);
+    border-radius: 21px;
+}
+
+.convergence-volume-osd-fill {
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 21px;
+}
+
+.convergence-volume-osd-icon {
+    icon-size: 18px;
+    color: rgba(0, 0, 0, 0.8);
+    padding: 6px;
+}
+
+.convergence-volume-osd-expand-btn {
+    background-color: transparent;
+    border-radius: 16px;
+    min-width: 32px;
+    min-height: 32px;
+    padding: 4px;
+}
+
+.convergence-volume-osd-expand-btn StIcon {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.convergence-volume-osd-expand-btn:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.convergence-volume-osd-ring-btn {
+    background-color: transparent;
+    border-radius: 16px;
+    min-width: 32px;
+    min-height: 32px;
+    padding: 4px;
+}
+
+.convergence-volume-osd-ring-btn StIcon {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.convergence-volume-osd-ring-btn:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.convergence-volume-osd-expanded {
+    spacing: 6px;
+    padding: 0 4px;
+}
+
+.convergence-volume-osd-stream-col {
+    spacing: 4px;
+}
+
+.convergence-volume-osd-stream-label {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 11px;
+    text-align: center;
+}
+
+.convergence-volume-osd-stream-slider .convergence-volume-osd-track {
+    border-radius: 17px;
+}
+
+.convergence-volume-osd-stream-slider .convergence-volume-osd-fill {
+    border-radius: 17px;
+}
+
+.convergence-volume-osd-normal-mark {
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 1px;
+}

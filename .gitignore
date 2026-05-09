@@ -1,0 +1,31 @@
+# Compiled schema
+schemas/gschemas.compiled
+
+# Personal dev/deploy scripts
+scripts/
+
+# Editor and IDE files
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+
+# Claude Code
+.claude/
+CLAUDE.md
+CLAUDE.local.md
+.clauderc
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Nextcloud / ownCloud sync
+.nextcloudsync.log
+.owncloudsync.log
+.sync_*.db
+.sync_*.db-shm
+.sync_*.db-wal
+.csync_journal.db*
+._sync_*.db*
