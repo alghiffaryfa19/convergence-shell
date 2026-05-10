@@ -42,10 +42,10 @@ Convergence Shell layers a second, mobile-aware shell on top of vanilla GNOME. P
 
 These modules detect missing hardware at runtime and stay disabled if unsupported:
 
-- **Auto-rotate** with optional suppression when the device is lying flat
+- **Auto-rotate**
 - **Auto-brightness** (requires an ambient light sensor)
 - **Call proximity** (screen off during calls)
-- **Alert slider** support for phones with a physical 3-position switch - OnePlus 6 specific
+- **Alert slider** support for phones with a physical 3-position switch - i.e. OnePlus 6
 
 ## Requirements
 
