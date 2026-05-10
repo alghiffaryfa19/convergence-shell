@@ -23,7 +23,7 @@ Convergence Shell layers a second, mobile-aware shell on top of vanilla GNOME. P
 - **Notification panel** with quick toggles, including a hotspot toggle wired into NetworkManager
 - **Home screen** with a customisable grid of app icons and widgets
 - **Custom mobile on-screen keyboard layout** (`mobileOSK`) replacing GNOME's stock OSK with a touch-tuned variant
-- **Edge gestures** for back / overview / app switching
+- **Edge gestures** for overview / app switching
 - **Gesture bar** and **recent apps** flow
 - **Splash screens** and a window stack tuned for a single-task-at-a-time feel
 - **Volume OSD** with an Android-style vertical slider
