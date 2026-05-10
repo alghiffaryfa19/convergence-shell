@@ -32,7 +32,6 @@ Convergence Shell layers a second, mobile-aware shell on top of vanilla GNOME. P
 - **Taskbar** with live window previews, hover animations, optional dynamic transparency and intellihide
 - **App menu** — start-menu-style floating grid
 - **Tray area** with `com.canonical.dbusmenu` support; can render in the GNOME top panel, the Convergence notification panel, or both
-- **Window effects** and **workspace** tweaks
 
 ### Shared
 
