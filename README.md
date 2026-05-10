@@ -12,7 +12,7 @@ This is an early work in progress project and I opened it up to the public for o
 
 GNOME Shell is built around a single interaction model. On a phone or convertible, that model breaks down: the panel is tuned for a mouse, gesture navigation is missing, the on-screen keyboard layout assumes desktop ergonomics, and there is no home screen.
 
-Convergence Shell layers a second, mobile-aware shell on top of vanilla GNOME. The desktop experience stays untouched on devices where it already works; phones and tablets get a touch-first interface that reuses the same windowing, notification, and theming primitives.
+Convergence Shell layers a second, mobile-aware shell on top of vanilla GNOME. Phones and tablets get a touch-first interface that reuses the same windowing, notification, and theming primitives.
 
 ## Features
 
